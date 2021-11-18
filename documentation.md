@@ -1,6 +1,6 @@
 ---
 title: "Documentation"
-permalink: "/about/"
+permalink: "/docu/"
 layout: page
 ---
 
