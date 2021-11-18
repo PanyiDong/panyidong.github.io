@@ -31,3 +31,6 @@ comments:
 
 plugins:
  - jekyll-feed
+
+include:
+ - _documentation/parallel-computing/installation-and-intro-to-openmp.md
