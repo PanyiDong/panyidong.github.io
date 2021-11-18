@@ -8,4 +8,4 @@ layout: page
 
 ### Parallel Computing
 
-1. Installation and Intro to OpenMP [link](https://github.com/PanyiDong)
+1. Installation and Intro to OpenMP [link]()
