@@ -1,6 +1,6 @@
 ---
 title: "Installation and Intro to OpenMP"
-permalink: "/about/"
+permalink: "/docu/"
 layout: page
 ---
 
