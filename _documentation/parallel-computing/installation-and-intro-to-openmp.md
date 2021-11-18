@@ -12,9 +12,9 @@ In case having problems of setting environment, I add a link to demonstrate how 
 
 OpenMP is an API supporting shared memory parallel computing for C, C++, Fortran.
 
-## Simple workflow for OpenMP
+### Simple workflow for OpenMP
 
-### Parallel Hello World
+#### Parallel Hello World
 Simple C code for hello world looks like:
 <p align="center">
 <img src="https://github.com/PanyiDong/panyidong.github.io/blob/master/_pic/_parallel_computing/typical_C_hello_world.jpg" alt="serial hello" width="400"/>
@@ -65,7 +65,7 @@ Sometimes (not always) we will get output format as:
 
 where the output format does not seem correct. It's due to that different threads may have different running speed (even with the same specification). Here, there's one thread running slow, so the output linefeed sign `\n` comes later than the output `Hello World!` of another thread. This is actually the prove for parallel independency, where all threads run their tasks independently without interference with each other.
 
-### Task Parallelism
+#### Task Parallelism
 
 One of the frequently used parallel idea is task parallelism, where usually benefits if we intend to perform different tasks on the same tasks. In task parallelism, we can just assign different tasks to each thread, and improve the efficiency.
 
@@ -93,7 +93,7 @@ Every `#pragma omp section` corresponds to a task that will be assigned to a thr
 
 The problems of task parallelism is that: (1) The threads that maximized the efficiency is defined by the tasks (if we define 3 parallel tasks, the efficiency will reach maximum when 3 threads are assigned; more threads will just wait the task to finish.) (2) The total time required for the job is defined by the slowest one parallel task (say three parallel tasks take 1s, 2s and 1day to finish, we will wait for at least 1day for the entire job; so if the task workloads are not balanced, we can not take the full advantages of parallelism).
 
-### Data Parallelism
+#### Data Parallelism
 
 Or, one other common solution for parallelism is data parallelism. Usually, this benefits if we intend to perform same tasks on large dataset. The idea is to divide the dataset to sections, where each thread is responsible for performing on one sections.
 
