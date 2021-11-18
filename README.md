@@ -14,11 +14,11 @@ My research interest is to bring innovative data science methods (Machine Learni
 
 ### Univeristy of Illinois at Urbana-Champaign, Department of Mathematics, Champaign, United States
 
-Graduate, 2020.9-Present
+Graduate Student, 2020.9-Present
 
 ### Zhejiang University, Department of Physics, Hangzhou, China
 
-Undergraduate, 2016.9-2020.6
+Undergraduate Student, 2016.9-2020.6
 
 # Job/Internship Experience
 
