@@ -1,6 +1,6 @@
 ---
-layout: default
 title: "Reposity"
+permalink: "/repo/"
 layout: page
 ---
 
