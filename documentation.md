@@ -13,4 +13,5 @@ layout: page
 ### OpenMP
 
 1. Installation and Intro to OpenMP [link](_documentation/parallel-computing/installation-and-intro-to-openmp.md)
-[new_link]({% link _documentation/parallel-computing/installation-and-intro-to-openmp.md %})
+
+OpenMP new [new_link]({% link _documentation/parallel-computing/installation-and-intro-to-openmp.md %})
