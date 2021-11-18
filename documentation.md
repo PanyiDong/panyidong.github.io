@@ -12,4 +12,4 @@ layout: page
 
 ### OpenMP
 
-1. Installation and Intro to OpenMP [test](_posts/parallel-computing/installation-and-intro-to-openmp.md)
+1. Installation and Intro to OpenMP [test](_posts/installation-and-intro-to-openmp.md)
