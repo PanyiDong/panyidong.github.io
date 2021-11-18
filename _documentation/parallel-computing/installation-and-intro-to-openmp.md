@@ -1,6 +1,5 @@
 ---
 title: "Installation and Intro to OpenMP"
-permalink: "/repo/docu/parallel/1_intro"
 layout: page
 ---
 
