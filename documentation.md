@@ -14,4 +14,5 @@ layout: page
 
 1. Installation and Intro to OpenMP [link](_documentation/parallel-computing/installation-and-intro-to-openmp.md)
 
-[test](/docu/parallel/1_intro/)
+[link](/docu/parallel/1_intro/)	
+
