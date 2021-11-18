@@ -1,6 +1,7 @@
 ---
 layout: default
 title: "Reposity"
+layout: page
 ---
 
 ## Undergraduate Physics Research Work
