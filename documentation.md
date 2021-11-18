@@ -11,5 +11,5 @@ layout: page
 ## Parallel Computing
 
 ### OpenMP
-<span id="jump">_documentation/parallel-computing/installation-and-intro-to-openmp.md</span>
-1. Installation and Intro to OpenMP [link](#jump)
+
+1. Installation and Intro to OpenMP [link](_documentation/parallel-computing/installation-and-intro-to-openmp.md)
