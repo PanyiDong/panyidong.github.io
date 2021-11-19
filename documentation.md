@@ -7,6 +7,7 @@ layout: page
 ## Auto Machine Learning (AutoML)
 
 #### Reposity [link](https://github.com/PanyiDong/AutoML)
+#### Report [link]()
 
 ## Parallel Computing
 
