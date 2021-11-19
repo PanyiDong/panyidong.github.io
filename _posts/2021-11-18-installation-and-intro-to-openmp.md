@@ -3,7 +3,7 @@ title: "Installation and Intro to OpenMP"
 permalink: "/docu/parallel/1_intro/"
 mathjax: true
 categories: media
-layout: post
+layout: page
 ---
 
 ## Installation
