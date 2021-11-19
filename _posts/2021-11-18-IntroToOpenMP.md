@@ -15,7 +15,7 @@ OpenMP is an API supporting shared memory parallel computing for C, C++, Fortran
 #### Parallel Hello World
 Simple C code for hello world looks like:
 <p align="center">
-<img src="../pic/parallel_computing/typical_C_hello_world.jpg" alt="openmp hello"/>
+<img src="https://raw.githubusercontent.com/PanyiDong/panyidong.github.io/master/pic/parallel_computing/typical_C_hello_world.jpg" alt="openmp hello" width = "800"/>
 </p>
 
 To parallel printing hello world, we just need to include omp header and wrap your code in omp parallel heading
@@ -28,12 +28,12 @@ To parallel printing hello world, we just need to include omp header and wrap yo
 
 The actual codes should look like:
 <p align="center">
-<img src="../pic/parallel_computing/OpenMP_C_hello_world.jpg" alt="openmp hello"/>
+<img src="https://raw.githubusercontent.com/PanyiDong/panyidong.github.io/master/pic/parallel_computing/OpenMP_C_hello_world.jpg" alt="openmp hello" width = "800"/>
 </p>
 
 And outputs of the parallel hello world should be:
 <p align="center">
-<img src="../pic/parallel_computing/parallel_hello_output.jpg" alt="openmp hello"/>
+<img src="https://raw.githubusercontent.com/PanyiDong/panyidong.github.io/master/pic/parallel_computing/parallel_hello_output.jpg" alt="openmp hello" width = "800"/>
 </p>
 
 Here my CPU processor has 16 threads, so there are 16 lines of `Hello World!` output in the terminal. Or if you wish to pre-define number of threads used in the job, you can define it before the parallel section.
@@ -58,7 +58,7 @@ If we write the parallel job as
 ```
 Sometimes (not always) we will get output format as:
 <p align="center">
-<img src="../pic/parallel_computing/parallel_independency.jpg" alt="parallel independency"/>
+<img src="https://raw.githubusercontent.com/PanyiDong/panyidong.github.io/master/pic/parallel_computing/parallel_independency.jpg" alt="parallel independency" width = "800"/>
 </p>
 
 where the output format does not seem correct. It's due to that different threads may have different running speed (even with the same specification). Here, there's one thread running slow, so the output linefeed sign `\n` comes later than the output `Hello World!` of another thread. This is actually the prove for parallel independency, where all threads run their tasks independently without interference with each other.
