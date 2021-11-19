@@ -22,6 +22,8 @@ Simple C code for hello world looks like:
 <img src="../_pic/_parallel_computing/typical_C_hello_world.jpg" alt="openmp hello"/>
 </p>
 
+![openmp hello](../_pic/_parallel_computing/typical_C_hello_world.jpg)
+
 To parallel printing hello world, we just need to include omp header and wrap your code in omp parallel heading
 ```c
 #pragma omp parallel
