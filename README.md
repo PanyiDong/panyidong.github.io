@@ -7,7 +7,7 @@ layout: page
 ## Me
 
 <p align="center">
-<img src="../pic/parallel_computing/typical_C_hello_world.jpg" alt="openmp hello" width="400"/>
+<img src="pic/parallel_computing/typical_C_hello_world.jpg" alt="openmp hello" width="400"/>
 </p>
 
 I'm Panyi Dong. Currently, I'm a graduate student at Univeristy of Illinois at Urbana-Champaign (UIUC), Department of Mathematics focusing on Actuarial Science.
