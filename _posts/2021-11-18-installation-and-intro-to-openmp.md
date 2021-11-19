@@ -1,6 +1,6 @@
 ---
 title: "Installation and Intro to OpenMP"
-layout: post
+layout: page
 ---
 
 ## Installation
