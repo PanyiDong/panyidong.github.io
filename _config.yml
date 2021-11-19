@@ -38,4 +38,4 @@ include:
  - repo.md
  - documentation.md
  - README.md
- - "_documentation/parallel-computing/installation-and-intro-to-openmp.md"
+ - _documentation/parallel-computing/installation-and-intro-to-openmp.md
