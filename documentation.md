@@ -11,5 +11,5 @@ layout: page
 
 ## Parallel Computing
 
-#### OpenMP [link](/OpenMP/)
+#### OpenMP [link](/Parallel/OpenMP/)
 
