@@ -1,6 +1,6 @@
 ---
 title: "Introduction to Parallel Computing"
-permalink: "/OpenMP/IntroToPC/"
+permalink: "/Parallel/OpenMP/IntroToPC/"
 mathjax: true
 categories: media
 layout: post
