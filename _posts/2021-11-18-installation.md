@@ -1,6 +1,6 @@
 ---
 title: "Installation"
-permalink: "/OpenMP/Parallel/Installation/"
+permalink: "/Parallel/OpenMP/Installation/"
 mathjax: true
 categories: media
 layout: post
