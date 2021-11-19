@@ -15,6 +15,7 @@ OpenMP is an API supporting shared memory parallel computing for C, C++, Fortran
 
 #### Parallel Hello World
 Simple C code for hello world looks like:
+![serial hello](../_pic/_parallel_computing/typical_C_hello_world.jpg)
 <p align="center">
 <img src="../_pic/_parallel_computing/typical_C_hello_world.jpg" alt="serial hello" width="400"/>
 </p>
