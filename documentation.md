@@ -12,7 +12,7 @@ layout: page
 
 ### OpenMP
 
-1. Installation and Intro to OpenMP [link](_documentation/parallel-computing/installation-and-intro-to-openmp.md)
+1. Installation and Intro to OpenMP [link](_posts/2021-11-18-installation-and-intro-to-openmp.md)
 
 [link](/docu/parallel/1_intro/)	
 
