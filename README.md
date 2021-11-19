@@ -25,7 +25,3 @@ Undergraduate Student, 2016.9-2020.6
 #### AIA Life Insurance Limited, Reporting Team, Actuarial Department, Shanghai, China
 
 Intern, 2021.1-2021.6
-
-## MathJax
-
-Contrast comes preinstalled with a leightweight alternative to MathJax called [KaTeX](https://katex.org/). To display equations in a post simply set `mathjax: true` in the article's front matter.
