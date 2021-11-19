@@ -6,10 +6,10 @@ layout: page
 
 ## Auto Machine Learning (AutoML)
 
-#### Reposity [link](https://github.com/PanyiDong/AutoML)
-#### Report [link]()
+#### &nbsp;&nbsp;&nbsp;&nbsp; Reposity [link](https://github.com/PanyiDong/AutoML)
+#### &nbsp;&nbsp;&nbsp;&nbsp; Report [link]()
 
 ## Parallel Computing
 
-#### OpenMP [link](/Parallel/OpenMP/)
+#### &nbsp;&nbsp;&nbsp;&nbsp; OpenMP [link](/Parallel/OpenMP/)
 
