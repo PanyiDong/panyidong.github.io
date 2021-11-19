@@ -11,5 +11,5 @@ layout: page
 
 ## Parallel Computing
 
-#### OpenMP [link](_posts/2021-11-18-OpenMP.md)
+#### OpenMP [link](/OpenMP/)
 

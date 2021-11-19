@@ -1,5 +1,6 @@
 ---
 title: "Intro to OpenMP"
+permalink: "/OpenMP/IntroToOpenMP/"
 mathjax: true
 categories: media
 layout: post
