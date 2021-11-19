@@ -17,7 +17,7 @@ minimal: false             # use a dark header
 
 navigation:                # accepts {file, title, url, icon, sidebaricon}
   - {file: "index.html", icon: home, title: Home}
-  - {file: "repo.md", title: Reposity}
+  - {file: "repo.md", title: Repository}
   - {file: "documentation.md", title: Documentation}
   - {file: "README.md", title: About Me}
 
@@ -38,4 +38,3 @@ include:
  - repo.md
  - documentation.md
  - README.md
- - _documentation/parallel-computing/installation-and-intro-to-openmp.md

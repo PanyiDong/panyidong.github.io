@@ -11,7 +11,5 @@ layout: page
 
 ## Parallel Computing
 
-### OpenMP
-
-1. Installation and Intro to OpenMP [link](_posts/2021-11-18-installation-and-intro-to-openmp.md)
+#### OpenMP [link](_posts/2021-11-18-OpenMP.md)
 
