@@ -6,9 +6,9 @@ layout: page
 
 ## Auto Machine Learning (AutoML)
 
-AutoML intends to solve the problem where in the process of applying ML algorithms, expertise of what ML model to select and hyperparameters to tune is crucial for the model's accuracy. For this project, I create a pipeline consists of preprocessing procedures (encoding, imputation, scaling, balancing, feature selection) and model selection (for regression/classification tasks). The hyperopt is then applied to use Bayeisan Optmization to select optimal hyperparameters settings.
+AutoML intends to solve the problem where in the process of applying ML algorithms, expertise of what ML model to select and hyperparameters to tune is crucial for the model's accuracy. For this project, I create a pipeline consists of preprocessing procedures (encoding, imputation, scaling, balancing, feature selection) and model selection (for regression/classification tasks). The hyperopt is then applied to use Bayesian Optimization to select optimal hyperparameters settings.
 
-#### &nbsp;&nbsp;&nbsp;&nbsp; [Reposity](https://github.com/PanyiDong/AutoML)  &nbsp;&nbsp;&nbsp;&nbsp; [Report]()
+#### &nbsp;&nbsp;&nbsp;&nbsp; [Repository](https://github.com/PanyiDong/AutoML)  &nbsp;&nbsp;&nbsp;&nbsp; [Report]()
 
 ## Machine Learning
 
@@ -24,3 +24,8 @@ Parallel Computing aims to take the full advantages of multi-threads computation
 #### For Python:
 
 #### Parallelism using GPU:
+
+
+## Others
+
+#### &nbsp;&nbsp;&nbsp;&nbsp; [Docker](/Others/IntroToDocker/)  
