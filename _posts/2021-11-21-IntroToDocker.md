@@ -59,5 +59,6 @@ After all these, you will see some Docker files in your workspace:
 2. `docker ps` check running image
 3. `docker ps -all` check all images
 4. `docker image rm -f [image_name]` force remove certain image
+5. `docker run -it [image_name] sh` log into and able to check image folder structure
 
 * If needed, check all docker commands in [link](https://docs.docker.com/engine/reference/commandline/docker/)
