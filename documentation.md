@@ -24,6 +24,8 @@ Parallel Computing aims to take the full advantages of multi-threads computation
 
 ### For Python
 
+#### &nbsp;&nbsp;&nbsp;&nbsp; [multiprocessing](/Parallel/multiprocessing/)  
+
 #### Parallelism using GPU
 
 #### &nbsp;&nbsp;&nbsp;&nbsp; [Numba & Cuba](/Parallel/NumbaCupy/)  

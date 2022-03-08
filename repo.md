@@ -13,8 +13,10 @@ layout: page
 ## Graduate Actuarial Science Research Work
 
 ### Extreme Value Theory
+
 1. Extreme Precipitation Prediction in Spain [link](https://github.com/PanyiDong/Courses/tree/main/Extreme-Value-Theory)
 2. Water Overflow Simulation [link](https://github.com/PanyiDong/Courses/tree/main/Water%20Flow%20Simulation)
 
 ### Machine Learning
+
 1. Auto Machine Learning (AutoML), UIUC IRisk Lab Project, Fall 2021 [link](https://github.com/PanyiDong/AutoML)
