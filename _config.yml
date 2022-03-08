@@ -8,33 +8,37 @@ date_format: "%B %d, %Y"
 
 # Layout
 
-show_excerpts: true        # show article excerpts on the home page
-show_frame: true           # adds a gray frame to the site
-show_sidebar: true        # show a sidebar instead of the usual header
-minimal: false             # use a dark header
+show_excerpts: true # show article excerpts on the home page
+show_frame: true # adds a gray frame to the site
+show_sidebar: true # show a sidebar instead of the usual header
+minimal: false # use a dark header
 
 # Menu
 
-navigation:                # accepts {file, title, url, icon, sidebaricon}
-  - {file: "index.html", icon: home, title: Home}
-  - {file: "repo.md", title: Projects, icon: clipboard}
-  - {file: "documentation.md", title: Documentation, icon: book}
-  - {file: "README.md", title: About Me, icon: user}
+navigation: # accepts {file, title, url, icon, sidebaricon}
+  - { file: "index.html", icon: home, title: Home }
+  - { file: "repo.md", title: Projects, icon: clipboard }
+  - { file: "documentation.md", title: Documentation, icon: book }
+  - { file: "README.md", title: About Me, icon: user }
 
-external:                  # shows a footer with social links - for available icons see fontawesome.com/icons
-  - {title: Mail, icon: envelope, url: "mailto:panyidong0@gmail.com"}
-  - {title: Github, icon: github, url: "https://github.com/PanyiDong"}
-  #- {title: twitter, icon: twitter, url: "https://twitter.com/pydong0_0"}
+external: # shows a footer with social links - for available icons see fontawesome.com/icons
+  - { title: Mail, icon: envelope, url: "mailto:panyid2@illinois.edu" }
+  - { title: Github, icon: github, url: "https://github.com/PanyiDong" }
+  - {
+      title: LinkedIn,
+      icon: LinkedIn,
+      url: "https://www.linkedin.com/in/panyi-dong-383109200/",
+    }
 
 comments:
 #  disqus_shortname: ""    # see https://disqus.com/
 #  isso_domain: ""         # see https://posativ.org/isso/
 
 plugins:
- - jekyll-feed
- - jekyll-relative-links
-  
+  - jekyll-feed
+  - jekyll-relative-links
+
 include:
- - repo.md
- - documentation.md
- - README.md
+  - repo.md
+  - documentation.md
+  - README.md
