@@ -8,7 +8,7 @@ layout: post
 
 ### Topic: My journey to Understand My Computational Data
 
-### Presented by Professor Joseph Yun, Dec. 2, 2021.
+### Presented by Professor Joseph Yun, Dec. 2, 2021
 
 Control over data
 
