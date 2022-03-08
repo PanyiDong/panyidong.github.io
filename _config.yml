@@ -26,7 +26,7 @@ external: # shows a footer with social links - for available icons see fontaweso
   - { title: Github, icon: github, url: "https://github.com/PanyiDong" }
   - {
       title: LinkedIn,
-      icon: LinkedIn,
+      icon: linkedin,
       url: "https://www.linkedin.com/in/panyi-dong-383109200/",
     }
 
