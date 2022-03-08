@@ -10,7 +10,7 @@ I'm Panyi Dong. Currently, I'm a graduate student at University of Illinois at U
 
 My research interest is to bring innovative data science methods (Machine Learning, Deep Learning) to data analysis in actuarial science, to better understand risk quantifying and improve out capacity of risk management skills.
 
-[Full CV](pic/CV-panyidong.pdf)
+[Full CV](_data/CV-panyidong.pdf)
 
 ## Education
 

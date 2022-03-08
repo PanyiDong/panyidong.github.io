@@ -148,6 +148,7 @@ For further Numba supports, please visit [web](https://numba.readthedocs.io/en/s
 CuPy is a NumPy-like API but with acceleration using GPU.
 
 From NumPy:
+
 ```python
 import numpy as np
 x_cpu = np.array([1, 2, 3])
@@ -155,6 +156,7 @@ l2_cpu = np.linalg.norm(x_cpu)
 ```
 
 Change it to GPU version:
+
 ```python
 import cupy as cp
 x_gpu = cp.array([1, 2, 3])
@@ -179,7 +181,7 @@ Stats: mean, var, etc.
 
 Sparse Matrix
 
-FFT: Fourier Transformation. 
+FFT: Fourier Transformation.
 
 Other Nvidia libraries: cuFFT, cuBLAS, etc.
 
