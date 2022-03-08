@@ -1,6 +1,6 @@
 ---
 50title: "Miscellaneous"
-permalink: "/Annotated%Bibliography/Miscellaneous"
+permalink: "/Annotated%Bibliography/Miscellaneous/"
 mathjax: true
 categories: media
 
