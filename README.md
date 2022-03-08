@@ -14,20 +14,20 @@ My research interest is to bring innovative data science methods (Machine Learni
 
 ## Education
 
-### &nbsp;&nbsp;&nbsp;&nbsp; University of Illinois at Urbana-Champaign, Department of Mathematics, Champaign, United States
+### University of Illinois at Urbana-Champaign (UIUC), Department of Mathematics
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PhD Student, 2022.8-Present
 
-### &nbsp;&nbsp;&nbsp;&nbsp; University of Illinois at Urbana-Champaign, Department of Mathematics, Champaign, United States
+### University of Illinois at Urbana-Champaign (UIUC), Department of Mathematics
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Master Student, 2020.8-2022.5
 
-#### &nbsp;&nbsp;&nbsp;&nbsp; Zhejiang University, Department of Physics, Hangzhou, China
+### Zhejiang University (ZJU), Department of Physics
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Undergraduate Student, 2016.9-2020.6
 
 ## Job/Internship Experience
 
-### &nbsp;&nbsp;&nbsp;&nbsp; AIA Life Insurance Limited, Reporting Team, Actuarial Department, Shanghai, China
+### AIA Life Insurance Limited, Reporting Team, Actuarial Department
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Intern, 2021.1-2021.6
