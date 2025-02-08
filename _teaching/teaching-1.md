@@ -1,8 +1,9 @@
 ---
 title: "Teaching Assistant"
 collection: teaching
+type: "Actuarial Science courses"
 permalink: /teaching/teaching-1
-venue: "Actuarial Science, University of Illinois Urbana-Champaign"
+venue: "University of Illinois Urbana-Champaign"
 date: 2022-08-15
 location: "Champaign, Illinois"
 ---
