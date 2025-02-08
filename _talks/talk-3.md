@@ -5,6 +5,7 @@ type: "Conference Presentation"
 permalink: /talks/talk-3
 venue: "27th International Congress on Insurance: Mathematics and Economics (IME)"
 date: 2024-07-09
+slidesurl: /slides/talk-3.pdf
 location: "Chicago, Illinois"
 ---
 
