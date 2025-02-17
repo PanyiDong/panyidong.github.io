@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-I'm currently a PhD student of Actuarial and Risk Management Sciences at University of Illinois Urbana-Champaign (UIUC). I'm passionate in research of the applications of Machine Learning (ML) and other emerging Data Science (DS) techniques to address real-life problems insurance industry. I have broad interest in topics like Automated Machine Learning (AutoML), Imbalanced learning, Federated Learning (FL), and Algorithm Bias and Fairness.
+I'm currently a PhD student in Actuarial and Risk Management Sciences at University of Illinois Urbana-Champaign (UIUC). I'm passionate in research of the applications of Machine Learning (ML) and other emerging Data Science (DS) techniques to address real-life problems in insurance industry. I have broad interest in topics like Automated Machine Learning (AutoML), Imbalanced learning, Federated Learning (FL), and Algorithm Bias and Fairness.
 
 Education
 ======
@@ -18,13 +18,13 @@ Education
 Experience
 ======
 * Teaching Assistant, University of Illinois Urbana-Champaign (UIUC)
-  * Sep. 2022 - Present.
+  * Sep. 2022 - Present
 * Research Assistant, University of Illinois Urbana-Champaign (UIUC)
-  * Dec. 2022 - May. 2023.
+  * Dec. 2022 - May. 2023
 * Graduate Supervisor, [IRisk Lab](https://asrm.illinois.edu/illinois-risk-lab/), University of Illinois Urbana-Champaign (UIUC)
-  * Sep. 2022, Present.
+  * Sep. 2022 - Present
 * Intern, AIA Life Insurance Company Limited
-  * Jan. 2021 - Jun. 2021.
+  * Jan. 2021 - Jun. 2021
   
 
 Skills
