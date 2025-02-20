@@ -11,9 +11,9 @@ I'm currently a PhD student in Actuarial and Risk Management Sciences at Univers
 
 Education
 ======
-* Ph.D in Actuarial Science and Risk Management, University of Illinois Urbana-Champaign (UIUC), 2027 (expected)
-* M.S. in Actuarial Science and Risk Management, University of Illinois Urbana-Champaign (UIUC), 2022
-* B.S. in Physics, Zhejiang University (ZJU), 2020
+* Ph.D. in Actuarial Science and Risk Management, University of Illinois Urbana-Champaign (UIUC), 2022 - 2027 (expected)
+* M.S. in Actuarial Science and Risk Management, University of Illinois Urbana-Champaign (UIUC), 2020 - 2022
+* B.S. in Physics, Zhejiang University (ZJU), 2016 - 2020
 
 Experience
 ======
@@ -21,7 +21,7 @@ Experience
   * Sep. 2022 - Present
 * Research Assistant, University of Illinois Urbana-Champaign (UIUC)
   * Dec. 2022 - May. 2023
-* Graduate Supervisor, [IRisk Lab](https://asrm.illinois.edu/illinois-risk-lab/), University of Illinois Urbana-Champaign (UIUC)
+* Graduate Supervisor, [IRisk Lab](https://asrm.illinois.edu/illinois-risk-lab/illinois-risk-lab-home/), University of Illinois Urbana-Champaign (UIUC)
   * Sep. 2022 - Present
 * Intern, AIA Life Insurance Company Limited
   * Jan. 2021 - Jun. 2021
