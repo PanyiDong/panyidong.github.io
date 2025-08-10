@@ -15,6 +15,10 @@ Education
 * M.S. in Actuarial Science and Risk Management, University of Illinois Urbana-Champaign (UIUC), 2022
 * B.S. in Physics, Zhejiang University (ZJU), 2020
 
+Awards & Honors
+
+* Society of Actuaries (SOA) James C. Hickman Scholar, 2025
+
 Experience
 ======
 * Teaching Assistant, University of Illinois Urbana-Champaign (UIUC)
