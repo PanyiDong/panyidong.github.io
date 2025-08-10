@@ -16,7 +16,7 @@ Education
 * B.S. in Physics, Zhejiang University (ZJU), 2016 - 2020
 
 Awards & Honors
-
+======
 * Society of Actuaries (SOA) James C. Hickman Scholar, 2025
 
 Experience
