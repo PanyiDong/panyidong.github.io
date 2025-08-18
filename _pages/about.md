@@ -39,3 +39,5 @@ Skills
 * Programming and Software
   * Mainly in Python, work with NumPy, Pandas, Scikit-Learn, PyTorch
   * Have experience with other languages (R, Matlab, C++, ) as well
+
+[Curriculum Vitae](CV.pdf)
