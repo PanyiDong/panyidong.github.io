@@ -53,7 +53,7 @@ function toggleTheme() {
 // Defer the loading of Mermaid to only if there is a field on the page to be rendered
 let mermaidElements = document.querySelectorAll("pre>code.language-mermaid");
 if (mermaidElements.length > 0) {
-  document.addEventListener("readystatechange", function() {
+  document.addEventListener("readystatechange", function () {
     // Append the Mermaid module to the DOM
     const moduleScript = document.createElement('script');
     moduleScript.type = 'module';
@@ -77,7 +77,7 @@ if (mermaidElements.length > 0) {
 // NOTE that plotlyDarkLayout and plotlyLightLayout will be exposed in the minimized file
 let plotlyElements = document.querySelectorAll("pre>code.language-plotly");
 if (plotlyElements.length > 0) {
-  document.addEventListener("readystatechange", function() {
+  document.addEventListener("readystatechange", function () {
     // Return if not ready
     if (document.readyState !== "complete") {
       return;
@@ -89,8 +89,8 @@ if (plotlyElements.length > 0) {
     script.async = true;
 
     // Once loaded, update the page elements to work with it
-    script.onload = function() {
-      plotlyElements.forEach(function(elem) {
+    script.onload = function () {
+      plotlyElements.forEach(function (elem) {
         // Parse the Plotly JSON data and hide it
         let jsonData = JSON.parse(elem.textContent);
         elem.parentElement.classList.add("hidden");
@@ -116,7 +116,7 @@ if (plotlyElements.length > 0) {
 }
 
 function redrawPlotly() {
-  plotlyElements.forEach(function(elem) {
+  plotlyElements.forEach(function (elem) {
     // Parse the Plotly JSON data
     let jsonData = JSON.parse(elem.textContent);
 
@@ -146,30 +146,14 @@ $(document).ready(function () {
   // If the user hasn't chosen a theme, follow the OS preference
   setTheme();
   window.matchMedia('(prefers-color-scheme: dark)')
-        .addEventListener("change", (e) => {
-          if (!localStorage.getItem("theme")) {
-            setTheme(e.matches ? "dark" : "light");
-          }
-        });
+    .addEventListener("change", (e) => {
+      if (!localStorage.getItem("theme")) {
+        setTheme(e.matches ? "dark" : "light");
+      }
+    });
 
   // Enable the theme toggle
   $('#theme-toggle').on('click', toggleTheme);
-
-  // Enable the sticky footer
-  var bumpIt = function () {
-    $("body").css("padding-bottom", "0");
-    $("body").css("margin-bottom", $(".page__footer").outerHeight(true));
-  }
-  $(window).resize(function () {
-    didResize = true;
-  });
-  setInterval(function () {
-    if (didResize) {
-      didResize = false;
-      bumpIt();
-    }}, 250);
-  var didResize = false;
-  bumpIt();
 
   // Follow menu drop down
   $(".author__urls-wrapper button").on("click", function () {
