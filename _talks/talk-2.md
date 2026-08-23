@@ -3,9 +3,7 @@ title: "Privacy-Preserving Collaborative Information Sharing Through Federated L
 collection: talks
 type: "Conference Presentation"
 permalink: /talks/talk-2
-venue: "58th Actuarial Research Conference (ARC)"
-date: 2023-08-01
-location: "Des Moines, Iowa"
+venue: "National Center for Supercomputing Applications (NCSA) Student Conference"
+date: 2023-04-13
+location: "Champaign, IL"
 ---
-
-[Download Slides](/slides/talk-2.pdf)
