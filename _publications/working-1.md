@@ -11,6 +11,8 @@ citation: '<b>Dong, P.</b>, Feng, F., Quan, Z., Wang, T. (2026). Bridging the Di
 a Tightrope: Evidence from the Insurance Industry on Federated Data Sharing.'
 ---
 
+Code Available at: [https://github.com/PanyiDong/FL](https://github.com/PanyiDong/FL)
+
 ## The Motivation: Overcoming Data Silos and Privacy Tightropes
 
 Data in the insurance industry is severely fragmented due to competitive pressures and strict regulatory privacy constraints. Insurers often operate as data silos, facing a two bottleneck: extreme data imbalance and insufficient feature coverage. While centralized repositories or direct data purchases offer partial solution, they create significant trade-offs regarding data privacy and continuous licensing costs. To resolve this, we sought to design a privacy-preserving collaborative learning framework that balances data privacy with data utility.  
