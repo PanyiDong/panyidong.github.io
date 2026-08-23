@@ -5,7 +5,7 @@ type: "Conference Presentation"
 permalink: /talks/talk-1
 venue: "57th Actuarial Research Conference (ARC)"
 date: 2022-08-03
-location: "Champaign, Illinois"
+location: "Champaign, IL"
 ---
 
 [Download Slides](/slides/talk-1.pdf)

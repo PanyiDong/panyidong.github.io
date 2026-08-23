@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-I'm currently a PhD student in Actuarial and Risk Management Sciences at University of Illinois Urbana-Champaign (UIUC). I'm passionate in research of the applications of Machine Learning (ML) and other emerging Data Science (DS) techniques to address real-life problems in insurance industry. I have broad interest in topics like Automated Machine Learning (AutoML), Imbalanced learning, Federated Learning (FL), and Algorithm Bias and Fairness.
+I'm currently a PhD student in Actuarial and Risk Management Sciences at University of Illinois Urbana-Champaign (UIUC). I'm passionate in research of the applications of Machine Learning (ML) and other emerging Data Science (DS) techniques to address real-life problems in insurance industry. I have broad interest in topics like Automated Machine Learning (AutoML), Imbalanced learning, Federated Learning (FL), Explainable Artificial Intelligence (XAI) and Algorithm Bias and Fairness.
 
 Education
 ======
@@ -17,7 +17,7 @@ Education
 
 Awards & Honors
 ======
-* Society of Actuaries (SOA) James C. Hickman Scholar, 2025
+* Society of Actuaries (SOA) James C. Hickman Scholar, 2025 - 2026
 
 Experience
 ======
@@ -30,14 +30,13 @@ Experience
 * Intern, AIA Life Insurance Company Limited
   * Jan. 2021 - Jun. 2021
   
-
 Skills
 ======
-* Society of Actuaries (SOA) Exams:
-  * Exam P, FM, IFM, IFM, LTAM, STAM
+* Society of Actuaries (SOA) Exams (Towards ASA):
+  * Exam P, FM, IFM, IFM, LTAM, STAM, SRM
   * VEE Mathematics Statistics
 * Programming and Software
   * Mainly in Python, work with NumPy, Pandas, Scikit-Learn, PyTorch
   * Have experience with other languages (R, Matlab, C++, ) as well
-
-[[Curriculum Vitae](CV.pdf)]
+  
+_Please refer to `CV` tab for detailed Curriculum Vitae._
