@@ -2,16 +2,15 @@
 title: "Bridging the Divide While Walking a Tightrope: Evidence from the Insurance Industry on Federated Data Sharing"
 collection: publications
 category: manuscripts
-permalink: /publication/working-1
+permalink: /publication/fl
 excerpt: 'This paper proposes a Hybrid Federated Learning (HyFL) framework tailored for the insurance industry that bridges data silos across insurers and InsurTech partners, achieving significant predictive accuracy gains and unlocking substantial financial value while preserving data privacy.'
 date: 2026-03-19
 venue: 'ssrn (Under Review)'
 paperurl: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6442024'
+bibtexurl: '/bib/fl.bib'
 citation: '<b>Dong, P.</b>, Feng, F., Quan, Z., Wang, T. (2026). Bridging the Divide While Walking
 a Tightrope: Evidence from the Insurance Industry on Federated Data Sharing.'
 ---
-
-Code Available at: [https://github.com/PanyiDong/FL](https://github.com/PanyiDong/FL)
 
 ## The Motivation: Overcoming Data Silos and Privacy Tightropes
 

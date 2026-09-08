@@ -17,12 +17,33 @@ author_profile: true
     {% assign title_shown = false %}
 
     {% if category[0] == 'manuscripts' %}
-      {% assign manuscript_posts = site.publications | sort: 'path' %}
-      {% for post in manuscript_posts %}
+      {% assign dated_manuscripts = '' | split: ',' %}
+      {% assign undated_manuscripts = '' | split: ',' %}
+      {% for post in site.publications %}
         {% if post.category != category[0] %}
           {% continue %}
         {% endif %}
+        {% if post.date %}
+          {% assign dated_manuscripts = dated_manuscripts | push: post %}
+        {% else %}
+          {% assign undated_manuscripts = undated_manuscripts | push: post %}
+        {% endif %}
+      {% endfor %}
+      {% assign dated_manuscripts = dated_manuscripts | sort: 'date' %}
 
+      {% comment %} Dated manuscripts first, sorted by date (oldest -> newest) {% endcomment %}
+      {% for post in dated_manuscripts %}
+        {% unless title_shown %}
+          <h2>{{ category[1].title }}</h2>
+          <hr />
+        {% assign title_shown = true %}
+        {% endunless %}
+
+        {% include archive-single.html %}
+      {% endfor %}
+
+      {% comment %} Undated manuscripts last {% endcomment %}
+      {% for post in undated_manuscripts %}
         {% unless title_shown %}
           <h2>{{ category[1].title }}</h2>
           <hr />

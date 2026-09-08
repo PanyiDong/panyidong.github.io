@@ -2,15 +2,14 @@
 title: "Efficient and Interpretable Transformer for Counterfactual Fairness"
 collection: publications
 category: manuscripts
-permalink: /publication/working-3
+permalink: /publication/fairness-attention
 excerpt: 'In this paper, we introduce the Feature Correlation Transformer (FCorrTransformer) and Counterfactual Attention Regularization (CAR). This efficient, attention-light framework achieves counterfactual fairness and high interpretability for tabular datasets, effectively mitigating algorithmic bias with minimal predictive performance degradation.'
 date: 2026-04-29
 venue: 'arXiv'
 paperurl: 'https://arxiv.org/abs/2604.26188'
+bibtexurl: '/bib/fairness-attention.bib'
 citation: '<b>Dong, P.</b>, Quan, Z. (2026). Efficient and Interpretable Transformer for Counterfactual Fairness.'
 ---
-
-Code Available at: [https://github.com/PanyiDong/FairnessAwareAttention](https://github.com/PanyiDong/FairnessAwareAttention)
 
 ## The Problem: The Tension Between Fairness and Performance
 

@@ -1,0 +1,35 @@
+---
+layout: archive
+title: "Code"
+permalink: /code/
+author_profile: true
+---
+
+To support reproducible research and adapt the methods for your own work, the open-source implementations are available in the GitHub repositories below.
+
+{% include base_path %}
+
+<!-- Render code items grouped by code_category, like the publications page -->
+{% if site.code_category %}
+{% for category in site.code_category %}
+{% assign title_shown = false %}
+
+{% for post in site.code %}
+{% if post.category != category[0] %}
+{% continue %}
+{% endif %}
+
+{% unless title_shown %}
+<h2>{{ category[1].title }}</h2>
+<hr />
+{% assign title_shown = true %}
+{% endunless %}
+
+{% include archive-single.html %}
+{% endfor %}
+{% endfor %}
+{% else %}
+{% for post in site.code %}
+{% include archive-single.html %}
+{% endfor %}
+{% endif %}

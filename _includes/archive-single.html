@@ -41,6 +41,9 @@
                 <p>In preparation</p>
                 {% elsif post.collection == 'publications' %}
                 <p>Published in <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </p>
+                {% elsif post.collection == 'code' and post.githuburl %}
+                <p><i class="fab fa-github" aria-hidden="true"></i> <a href="{{ post.githuburl }}">{{ post.githuburl
+                                }}</a></p>
                 {% elsif post.date %}
                 <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{
                                 site.data.ui-text[site.locale].date_label | default: "Published:" }}</strong> <time
@@ -71,7 +74,7 @@
                 <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.paperurl }}">Read Paper</a> | <a
                                 href="{{ post.slidesurl }}">Download Slides</a></p>
                 {% elsif post.citation and post.paperurl and post.bibtexurl %}
-                <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.paperurl }}">Read Paper</a> | <a
+                <p>Recommended citation: {{ post.citation }} <a href="{{ post.paperurl }}">Read Paper</a> | <a
                                 href="{{ post.bibtexurl }}">Download Bibtex</a></p>
                 {% elsif post.citation and post.paperurl %}
                 <p>Recommended citation: {{ post.citation }} <a href="{{ post.paperurl }}">Read Paper</a></p>

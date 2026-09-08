@@ -2,11 +2,12 @@
 title: "Improving Business Insurance Loss Models by Leveraging InsurTech Innovation"
 collection: publications
 category: journal
-permalink: /publication/journal-1
+permalink: /publication/insurtech
 excerpt: 'This paper demonstrates that enriching traditional in-house insurance datasets with real-time, personalized InsurTech data improves the predictive accuracy of business insurance loss models.'
 date: 2024-10-15
 venue: 'North American Actuarial Journal'
 paperurl: 'https://www.tandfonline.com/doi/full/10.1080/10920277.2024.2400648?af=R'
+bibtexurl: '/bib/insurtech.bib'
 citation: 'Quan, Z., Hu, C., <b>Dong, P.</b>, Valdez, E. (2025). Improving Business Insurance Loss Models by Leveraging InsurTech Innovation. <i>North American Actuarial Journal</i>, 29(2), 247-274.'
 ---
 
