@@ -2,15 +2,14 @@
 title: "Starting Off on the Wrong Foot: Pitfalls in Data Preparation"
 collection: publications
 category: manuscripts
-permalink: /publication/working-2
+permalink: /publication/informedautoml
 excerpt: 'To prevent flawed actuarial modeling caused by inappropriate data preprocessing, we developed an effective and efficient Informed Data Preparation Pipeline (IDPP) utilizing various statistical tools.'
 date: 2026-03-18
 venue: 'arXiv (Under Review)'
 paperurl: 'https://arxiv.org/abs/2603.18190'
+bibtexurl: '/bib/informedautoml.bib'
 citation: 'Guo, J., <b>Dong, P.</b>, Quan, Z. (2026). Starting Off on the Wrong Foot: Pitfalls in DataPreparation.'
 ---
-
-Code Available at: [https://github.com/PanyiDong/InsurAutoML](https://github.com/PanyiDong/InsurAutoML)
 
 ## The Problem: Starting Off on the Wrong Foot
 

@@ -2,16 +2,15 @@
 title: "Automated Machine Learning (AutoML) in Insurance"
 collection: publications
 category: journal
-permalink: /publication/journal-2
+permalink: /publication/insurautoml
 excerpt: 'This paper introduces an open-source Automated Machine Learning (AutoML) framework tailored for the insurance domain, effectively automating data preprocessing, hyperparameter optimization, and imbalance learning, to streamline actuarial data science.'
 date: 2024-11-14
 venue: 'Insurance: Mathematics and Economics'
 paperurl: 'https://www.sciencedirect.com/science/article/pii/S0167668724001057'
+bibtexurl: '/bib/insurautoml.bib'
 citation: '<b>Dong, P.</b>, Quan, Z. (2025). Automated Machine Learning (AutoML) in Insurance. <i>Insurance:
 Mathematics and Economics</i>, 120, 17-41.'
 ---
-
-Code Available at: [https://github.com/PanyiDong/InsurAutoML](https://github.com/PanyiDong/InsurAutoML)
 
 ## The Motivation: Overcoming Insurance Data Hurdles
 
