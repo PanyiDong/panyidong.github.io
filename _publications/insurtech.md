@@ -7,7 +7,7 @@ excerpt: 'This paper demonstrates that enriching traditional in-house insurance 
 date: 2024-10-15
 venue: 'North American Actuarial Journal'
 paperurl: 'https://www.tandfonline.com/doi/full/10.1080/10920277.2024.2400648?af=R'
-bibtexurl: '/bib/insurtech.bib'
+bibtexurl: '/files/bib/insurtech.bib'
 citation: 'Quan, Z., Hu, C., <b>Dong, P.</b>, Valdez, E. (2025). Improving Business Insurance Loss Models by Leveraging InsurTech Innovation. <i>North American Actuarial Journal</i>, 29(2), 247-274.'
 ---
 
@@ -16,7 +16,7 @@ citation: 'Quan, Z., Hu, C., <b>Dong, P.</b>, Valdez, E. (2025). Improving Busin
 Business insurance, such as Business Owner's Policies (BOP), historically suffers from higher expense ratios and more complex underwriting processes compared to personal lines. Because insurers often fall short of gathering sufficient, highly granular risk factors during standard underwriting, traditional in-house loss models are limited. This gap in data leads to imperfect premium pricing and elevated loss ratios, leaving a critical need to capture alternative risk characteristics that drive commercial claims.
 
 <p align="center">
-  <img src="/images/Figure1-1.png" alt="The Flow of Information from the Academic–Industry Collaboration">
+  <img src="/files/images/Figure1-1.png" alt="The Flow of Information from the Academic–Industry Collaboration">
   <em>The Flow of Information from the Academic–Industry Collaboration</em>
 </p>
 
@@ -25,7 +25,7 @@ Business insurance, such as Business Owner's Policies (BOP), historically suffer
 To address this, we leveraged a unique academic-industry collaboration to fuse an insurance company’s proprietary historical claims data with dynamic, external datasets provided by Carpe Data, an InsurTech firm. The enhanced dataset integrated conventional policy exposures with novel web-scraped features, including social media visibility, online review sentiment, firmographics, and granular proximity/territory risk scores. To quantify the value of this external data, we evaluated the loss model performance using LightGM with a traditional baseline Tweedie GLM optimized with elastic net feature selection.  
 
 <p align="center">
-  <img src="/images/Figure1-2.jpg" alt="Double Lift Charts for Model Comparison">
+  <img src="/files/images/Figure1-2.jpg" alt="Double Lift Charts for Model Comparison">
   <em>Double Lift Charts for Model Comparison</em>
 </p>
 

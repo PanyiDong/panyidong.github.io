@@ -1,3 +1,41 @@
+# File Name: _config.yml
+# Author: Panyi Dong
+# GitHub: https://github.com/PanyiDong/
+# Actuarial and Risk Management Sciences, University of Illinois at Urbana-Champaign (UIUC)
+#
+# Project: academic-pages
+# Latest Version: 0.8.1.1
+# Relative Path: /_config.yml
+# File Created: Thursday, 10th September 2026 10:25:55 am
+# Author: Panyi Dong (panyid2@illinois.edu)
+#
+# -----
+# Last Modified: Thursday, 10th September 2026 11:45:20 am
+# Modified By: Panyi Dong (panyid2@illinois.edu)
+#
+# -----
+# MIT License
+#
+# Copyright (c) 2026, Panyi Dong
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
 # Welcome to Jekyll!
 #
 # This config file is meant for settings that affect your entire site, values
@@ -105,7 +143,7 @@ code_category:
     title: 'Tutorials & Notebooks'
 
 # Site Settings
-teaser                   :  # filename of teaser fallback teaser image placed in /images/ for social media previews
+teaser                   :  # filename of teaser fallback teaser image placed in /files/images/ for social media previews
 breadcrumbs              : false # true, false (default)
 words_per_minute         : 160
 future                   : true

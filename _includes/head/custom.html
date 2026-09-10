@@ -16,11 +16,11 @@
     <link rel="stylesheet" href="{{ base_path }}/assets/css/fontawesome.css">
 </noscript>
 
-<!-- favicon: images/uni.png -->
-<link rel="icon" type="image/png" href="{{ base_path }}/images/uni.png" sizes="170x170" />
-<link rel="shortcut icon" href="{{ base_path }}/images/uni.png" />
-<link rel="apple-touch-icon" href="{{ base_path }}/images/uni.png" />
-<link rel="manifest" href="{{ base_path }}/images/manifest.json" />
+<!-- favicon: images/uni.png (relative URLs so it works in local serve and production) -->
+<link rel="icon" type="image/png" href="{{ '/files/images/uni.png' | relative_url }}" sizes="170x170" />
+<link rel="shortcut icon" href="{{ '/files/images/uni.png' | relative_url }}" />
+<link rel="apple-touch-icon" href="{{ '/files/images/uni.png' | relative_url }}" />
+<link rel="manifest" href="{{ '/files/images/manifest.json' | relative_url }}" />
 <meta name="theme-color" content="var(--global-bg-color)" />
 
 <!-- end custom head snippets -->

@@ -7,7 +7,7 @@ excerpt: 'In this paper, we introduce the Feature Correlation Transformer (FCorr
 date: 2026-04-29
 venue: 'arXiv'
 paperurl: 'https://arxiv.org/abs/2604.26188'
-bibtexurl: '/bib/fairness-attention.bib'
+bibtexurl: '/files/bib/fairness-attention.bib'
 citation: '<b>Dong, P.</b>, Quan, Z. (2026). Efficient and Interpretable Transformer for Counterfactual Fairness.'
 ---
 
@@ -20,7 +20,7 @@ The rapid adoption of ML in heavily regulated domains, such as insurance and fin
 To solve these structural limitations, we developed the FCorrTransformer, an attention-light architecture tailored specifically for tabular data. Instead of using dense, high-dimensional embeddings, our model relies on one-dimensional embeddings. This design ensures that the attention matrix directly represents pairwise statistical dependencies between features. Leveraging this transparent structure, we introduced CAR. CAR operates by evaluating counterfactual permutations of sensitive features via an efficient input augmentation strategy, explicitly penalizing and suppressing biased dependencies directly within the attention matrix. Furthermore, to mitigate indirect discrimination, we introduced Domain Adaptation-based CAR (DACAR), which aligns non-sensitive features using CORAL mapping during training to account for correlated proxy biases. 
 
 <p align="center">
-  <img src="/images/Figure6-1.png" alt="Architecture Design of FCorrTransformer">
+  <img src="/files/images/Figure6-1.png" alt="Architecture Design of FCorrTransformer">
   <em>Architecture Design of FCorrTransformer</em>
 </p>
 
@@ -29,7 +29,7 @@ To solve these structural limitations, we developed the FCorrTransformer, an att
 We rigorously evaluated our framework against standard baseline models using highly imbalanced, real-world financial and proprietary commercial insurance datasets. The FCorrTransformer paired with CAR successfully achieved strong counterfactual fairness while maintaining highly competitive predictive accuracy. Beyond fairness, our architecture vastly outperformed standard transformers in computational efficiency. Because of its attention-light design, our model drastically reduced parameter counts and utilized only a fraction of the GPU memory required by baseline models. Ultimately, this framework provides a highly interpretable, and practical pathway for deploying responsible AI in regulatory-sensitive environments.
 
 <p align="center">
-  <img src="/images/Figure6-2.png" alt="Heatmap of Pre-SoftMax Attention Weights on BAF Data">
+  <img src="/files/images/Figure6-2.png" alt="Heatmap of Pre-SoftMax Attention Weights on BAF Data">
   <em>Heatmap of Pre-SoftMax Attention Weights on BAF Data</em>
 </p>
 

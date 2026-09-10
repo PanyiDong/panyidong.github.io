@@ -7,7 +7,7 @@ excerpt: 'This paper proposes a Hybrid Federated Learning (HyFL) framework tailo
 date: 2026-03-19
 venue: 'ssrn (Under Review)'
 paperurl: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6442024'
-bibtexurl: '/bib/fl.bib'
+bibtexurl: '/files/bib/fl.bib'
 citation: '<b>Dong, P.</b>, Feng, F., Quan, Z., Wang, T. (2026). Bridging the Divide While Walking
 a Tightrope: Evidence from the Insurance Industry on Federated Data Sharing.'
 ---
@@ -21,7 +21,7 @@ Data in the insurance industry is severely fragmented due to competitive pressur
 Classical Federated Learning (FL) is typically limited to either horizontal (HFL) or vertical (VFL) data partitioning. However, real-world insurance ecosystems are structurally complex, featuring overlapping samples across insurers alongside non-overlapping proprietary features from InsurTech partners. To address this, we developed HyFL, an framework simultaneously aggregate horizontal and vertical partitions. In addition, to handle the extreme sparsity and class imbalance of insurance claims, we integrated a domain-specific warm-up pre-training phase that stabilized the training process.  
 
 <p align="center">
-  <img src="/images/Figure4-1.png" alt="Structure of HyFL">
+  <img src="/files/images/Figure4-1.png" alt="Structure of HyFL">
   <em>Structure of HyFL</em>
 </p>
 
