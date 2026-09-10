@@ -442,3 +442,25 @@
     }
   }
 }
+
+/* ==========================================================================
+   MASTHEAD LOGO (uni.png at upper left, independent of the site title link)
+   ========================================================================== */
+
+.greedy-nav {
+  display: flex;
+  align-items: center;
+
+  .masthead__logo {
+    flex: 0 0 auto;
+    margin: 0 0.5rem 0 0;
+    padding: 0.25rem 0;
+    line-height: 0;
+
+    img {
+      display: block;
+      width: 40px;
+      height: 40px;
+    }
+  }
+}

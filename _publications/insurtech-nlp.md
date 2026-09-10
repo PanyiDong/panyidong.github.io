@@ -7,7 +7,7 @@ excerpt: 'This paper explores the transformative potential of Natural Language P
 date: 2026-07-22
 venue: 'North American Actuarial Journal'
 paperurl: 'https://arxiv.org/abs/2507.21112'
-bibtexurl: '/bib/insurtech-nlp.bib'
+bibtexurl: '/files/bib/insurtech-nlp.bib'
 citation: '<b>Dong, P.</b>, Quan, Z. (2026). InsurTech innovation using natural language processing. <i>North American Actuarial Journal</i>, forthcoming.'
 ---
 
@@ -16,7 +16,7 @@ citation: '<b>Dong, P.</b>, Quan, Z. (2026). InsurTech innovation using natural 
 As the insurance industry embraces data-driven approaches, a massive gap remains in analyzing unstructured textual data. Traditional actuarial modeling primarily relies on structured numerical inputs, leaving rich, context-heavy data like online reviews or business descriptions completely unutilized. Furthermore, existing numerical rating systems inherently carry geographical or socioeconomic biases, and high-cardinality categorical features often suffer from dimensionality issues when strictly encoded. In our work, we identified an urgent need to bridge the gap between human-readable text and numerical actuarial frameworks using NLP.  
 
 <p align="center">
-  <img src="/images/Figure3-1.png" alt="Summary of Text to Numbers Solutions">
+  <img src="/files/images/Figure3-1.png" alt="Summary of Text to Numbers Solutions">
   <em>Summary of Text to Numbers Solutions</em>
 </p>
 
@@ -25,7 +25,7 @@ As the insurance industry embraces data-driven approaches, a massive gap remains
 To overcome these hurdles, we utilize a real-world InsurTech data and employ state-of-the-art NLP techniques to enrich our models. First, we introduced a lexicon-based sentiment analysis approach to de-bias inherently flawed customer star ratings by establishing objective sentiment polarity scores. Second, to tackle the "curse of dimensionality" from thousands of raw business categories, we deployed the advanced neural embedding model, transforming more than 13,000 messy textual labels into compact, 24-dimensional, context-aware numerical features. Lastly, we explored an unsupervised topic modeling framework using LDA and RAKE to automatically map business descriptions to their appropriate North American Industry Classification System (NAICS) codes.  
 
 <p align="center">
-  <img src="/images/Figure3-2.png" alt="Unsupervised Industry Classification Pipeline">
+  <img src="/files/images/Figure3-2.png" alt="Unsupervised Industry Classification Pipeline">
   <em>Unsupervised Industry Classification Pipeline</em>
 </p>
 

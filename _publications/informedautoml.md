@@ -7,7 +7,7 @@ excerpt: 'To prevent flawed actuarial modeling caused by inappropriate data prep
 date: 2026-03-18
 venue: 'arXiv (Under Review)'
 paperurl: 'https://arxiv.org/abs/2603.18190'
-bibtexurl: '/bib/informedautoml.bib'
+bibtexurl: '/files/bib/informedautoml.bib'
 citation: 'Guo, J., <b>Dong, P.</b>, Quan, Z. (2026). Starting Off on the Wrong Foot: Pitfalls in DataPreparation.'
 ---
 
@@ -20,7 +20,7 @@ Actuarial modeling often starts off on the wrong foot when handling real-world, 
 To tackle these pitfalls, we developed IDPP that systematically automates and improves upstream preprocessing. We utilized SPlit, which leverages _support points_ to guarantee the distributional consistency between train and test sets, particularly for heavy-tailed imbalanced distributions. For feature selection, we applied the Chatterjee correlation coefficient (CCC) to capture complex, non-linear dependencies without relying on specific model architectures. Finally, we handled missingness using MissForest imputation, seamlessly embedding this entire IDPP into our custom InformedAutoML framework.  
 
 <p align="center">
-  <img src="/images/Figure5-1.png" alt="An illustration of the IDPP">
+  <img src="/files/images/Figure5-1.png" alt="An illustration of the IDPP">
   <em>An illustration of the IDPP</em>
 </p>
 
@@ -29,6 +29,6 @@ To tackle these pitfalls, we developed IDPP that systematically automates and im
 Through rigorous simulations and real-world studies, our approach demonstrated substantial improvements. The SPlit method successfully stabilized the allocation of extreme claim events, drastically reducing the variance in coefficient estimation. Furthermore, InformedAutoML achieved globally optimal predictive performance metrics while running four to five times faster than baseline automated frameworks. Ultimately, the proposed framework is both statistically robust and computationally efficient.
 
 <p align="center">
-  <img src="/images/Figure5-2.png" alt="Train/Test RMSE and runtime on college Pell Grant dataset">
+  <img src="/files/images/Figure5-2.png" alt="Train/Test RMSE and runtime on college Pell Grant dataset">
   <em>Train/Test RMSE and runtime on college Pell Grant dataset</em>
 </p>
