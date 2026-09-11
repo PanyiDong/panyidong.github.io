@@ -23,4 +23,13 @@
 <link rel="manifest" href="{{ '/files/images/manifest.json' | relative_url }}" />
 <meta name="theme-color" content="var(--global-bg-color)" />
 
+<!-- Page-view counter (Abacus free hit-counter API; skipped on local dev servers) -->
+<script>
+    (function () {
+        if (location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '127.0.0.1') return;
+        var key = location.pathname.replace(/[^a-zA-Z0-9-]/g, '') || 'home';
+        fetch('https://abacus.jasoncameron.dev/hit/panyidong.github.io/' + key, { cache: 'no-store' }).catch(function () { });
+    })();
+</script>
+
 <!-- end custom head snippets -->
