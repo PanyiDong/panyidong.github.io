@@ -6,7 +6,7 @@ permalink: /publication/insurtech-nlp
 excerpt: 'This paper explores the transformative potential of Natural Language Processing (NLP) in modernizing insurance analytics by extracting actionable insights from unstructured InsurTech data, with applications such as feature de-biasing, high-cardinality feature representation, and automated industry classification.'
 date: 2026-07-22
 venue: 'North American Actuarial Journal'
-paperurl: 'https://arxiv.org/abs/2507.21112'
+paperurl: 'https://doi.org/10.1080/10920277.2026.2722245'
 bibtexurl: '/files/bib/insurtech-nlp.bib'
 citation: '<b>Dong, P.</b>, Quan, Z. (2026). InsurTech innovation using natural language processing. <i>North American Actuarial Journal</i>, forthcoming.'
 ---
