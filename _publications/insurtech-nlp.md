@@ -9,6 +9,7 @@ venue: 'North American Actuarial Journal'
 paperurl: 'https://doi.org/10.1080/10920277.2026.2722245'
 bibtexurl: '/files/bib/insurtech-nlp.bib'
 citation: '<b>Dong, P.</b>, Quan, Z. (2026). InsurTech innovation using natural language processing. <i>North American Actuarial Journal</i>, 1-34.'
+labels: [Natural Language Processing (NLP), InsurTech]
 ---
 
 ## The Problem: The Untapped Potential of Unstructured Data

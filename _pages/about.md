@@ -19,7 +19,7 @@ redirect_from:
     <li class="tag">Imbalanced Learning</li>
     <li class="tag">Federated Learning (FL)</li>
     <li class="tag">Explainable AI (XAI)</li>
-    <li class="tag">Algorithmic Bias &amp; Fairness</li>
+    <li class="tag">Algorithmic Fairness</li>
   </ul>
 </div>
 

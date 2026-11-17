@@ -3,18 +3,116 @@
 <!-- Support for MathJax -->
 <script id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@4.0.0/tex-mml-chtml.js"></script>
 
-<!-- Abstract toggles on publication lists -->
+<!-- TL;DR panels and topic filtering on publication lists -->
 <script>
-    document.addEventListener('click', function (e) {
-        var btn = e.target.closest('[data-toggle-target]');
-        if (!btn) return;
-        var panel = document.getElementById(btn.getAttribute('data-toggle-target'));
-        if (!panel) return;
-        var open = panel.hasAttribute('hidden');
-        if (open) { panel.removeAttribute('hidden'); } else { panel.setAttribute('hidden', ''); }
-        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-        btn.classList.toggle('is-active', open);
-    });
+    (function () {
+        // ---- TL;DR expand / collapse ----
+        document.addEventListener('click', function (e) {
+            var btn = e.target.closest('[data-toggle-target]');
+            if (!btn) return;
+            var panel = document.getElementById(btn.getAttribute('data-toggle-target'));
+            if (!panel) return;
+            var open = panel.hasAttribute('hidden');
+            if (open) { panel.removeAttribute('hidden'); } else { panel.setAttribute('hidden', ''); }
+            btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+            btn.classList.toggle('is-active', open);
+        });
+
+        // ---- Topic filter (Publications page only) ----
+        var filter = document.getElementById('pub-filter');
+        if (!filter) return;  // elsewhere, topic labels are plain links to /publications/?label=...
+
+        var chips = filter.querySelectorAll('[data-filter-label]');
+        var clearBtn = filter.querySelector('[data-filter-clear]');
+        var toggleBtn = filter.querySelector('[data-filter-toggle]');
+        var panel = document.getElementById(toggleBtn.getAttribute('aria-controls'));
+
+        // Folded by default; the header row expands / collapses the topic chips
+        function setOpen(open) {
+            panel.hidden = !open;
+            toggleBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+            filter.classList.toggle('is-open', open);
+        }
+        toggleBtn.addEventListener('click', function () { setOpen(panel.hidden); });
+        var status = filter.querySelector('.pub-filter__status');
+        var groups = document.querySelectorAll('.pub-group');
+        var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var active = null;
+
+        groups.forEach(function (g) {
+            var c = g.querySelector('.pub-group__count');
+            if (c) c.setAttribute('data-total', c.textContent.trim());
+        });
+
+        function labelsOf(pub) {
+            var raw = pub.getAttribute('data-labels');
+            return raw ? raw.split('|') : [];
+        }
+
+        function apply(label, updateUrl) {
+            active = label || null;
+            var shown = 0;
+
+            groups.forEach(function (g) {
+                var visible = 0;
+                g.querySelectorAll('.pub').forEach(function (pub) {
+                    var match = !active || labelsOf(pub).indexOf(active) !== -1;
+                    pub.hidden = !match;
+                    if (match) visible++;
+                });
+                g.hidden = visible === 0;
+                var c = g.querySelector('.pub-group__count');
+                if (c) c.textContent = active ? visible : c.getAttribute('data-total');
+                shown += visible;
+            });
+
+            chips.forEach(function (chip) {
+                var on = chip.getAttribute('data-filter-label') === active;
+                chip.setAttribute('aria-pressed', on ? 'true' : 'false');
+                chip.classList.toggle('is-active', on);
+            });
+
+            document.querySelectorAll('.pub-label').forEach(function (l) {
+                l.classList.toggle('is-active', l.getAttribute('data-label') === active);
+            });
+
+            clearBtn.hidden = !active;
+            filter.classList.toggle('is-filtering', !!active);
+            status.textContent = active
+                ? 'Showing ' + shown + (shown === 1 ? ' paper' : ' papers') + ' on “' + active + '”.'
+                : '';
+
+            if (updateUrl && window.history && history.replaceState) {
+                var url = new URL(window.location.href);
+                if (active) { url.searchParams.set('label', active); } else { url.searchParams.delete('label'); }
+                history.replaceState(null, '', url.pathname + url.search + url.hash);
+            }
+        }
+
+        filter.addEventListener('click', function (e) {
+            var chip = e.target.closest('[data-filter-label]');
+            if (chip) {
+                var label = chip.getAttribute('data-filter-label');
+                apply(label === active ? null : label, true);
+                return;
+            }
+            if (e.target.closest('[data-filter-clear]')) apply(null, true);
+        });
+
+        // Clicking a topic inside a TL;DR panel filters in place and brings the filter into view
+        document.addEventListener('click', function (e) {
+            var link = e.target.closest('.pub-label');
+            if (!link || e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
+            e.preventDefault();
+            apply(link.getAttribute('data-label'), true);
+            setOpen(true);
+            filter.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+        });
+
+        var initial = new URLSearchParams(window.location.search).get('label');
+        var known = Array.prototype.some.call(chips, function (c) { return c.getAttribute('data-filter-label') === initial; });
+        if (initial && known) { apply(initial, false); setOpen(true); }
+    })();
 </script>
 
 <!-- Copy BibTeX buttons: fetch the .bib file and copy its text; open the file if copying fails -->

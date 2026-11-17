@@ -10,6 +10,7 @@ paperurl: 'https://www.sciencedirect.com/science/article/pii/S0167668724001057'
 bibtexurl: '/files/bib/insurautoml.bib'
 citation: '<b>Dong, P.</b>, Quan, Z. (2025). Automated Machine Learning (AutoML) in Insurance. <i>Insurance:
 Mathematics and Economics</i>, 120, 17-41.'
+labels: [Automated Machine Learning (AutoML), Imbalanced Learning]
 ---
 
 ## The Motivation: Overcoming Insurance Data Hurdles

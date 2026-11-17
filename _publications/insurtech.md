@@ -9,6 +9,7 @@ venue: 'North American Actuarial Journal'
 paperurl: 'https://www.tandfonline.com/doi/full/10.1080/10920277.2024.2400648?af=R'
 bibtexurl: '/files/bib/insurtech.bib'
 citation: 'Quan, Z., Hu, C., <b>Dong, P.</b>, Valdez, E. (2025). Improving Business Insurance Loss Models by Leveraging InsurTech Innovation. <i>North American Actuarial Journal</i>, 29(2), 247-274.'
+labels: [InsurTech]
 awards:
   - '2025 NAAJ Annual Prize for Best Paper'
 ---

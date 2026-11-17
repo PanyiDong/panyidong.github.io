@@ -6,4 +6,5 @@ permalink: /publication/zero-sampling
 excerpt: ''
 paperurl: ''
 citation: 'Zhiyu Quan, Haiying Wang, Jing Wang, Jiaqi Liu.'
+labels: [Computational Efficiency, Imbalanced Learning]
 ---

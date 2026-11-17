@@ -9,6 +9,7 @@ venue: 'arXiv'
 paperurl: 'https://arxiv.org/abs/2604.26188'
 bibtexurl: '/files/bib/fairness-attention.bib'
 citation: '<b>Dong, P.</b>, Quan, Z. (2026). Efficient and Interpretable Transformer for Counterfactual Fairness.'
+labels: [Algorithmic Fairness, Explainable AI (XAI), Computational Efficiency, InsurTech]
 ---
 
 ## The Problem: The Tension Between Fairness and Performance

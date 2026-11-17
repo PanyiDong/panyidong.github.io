@@ -9,7 +9,7 @@
   <a class="pub-btn pub-btn--primary" href="{{ item.paperurl }}" target="_blank" rel="noopener"><i class="far fa-file-lines" aria-hidden="true"></i> Paper</a>
   {% endif %}
   {% if include.abstract_id %}
-  <button type="button" class="pub-btn" data-toggle-target="{{ include.abstract_id }}" aria-expanded="false" aria-controls="{{ include.abstract_id }}"><i class="fas fa-align-left" aria-hidden="true"></i> Abstract</button>
+  <button type="button" class="pub-btn pub-btn--toggle" data-toggle-target="{{ include.abstract_id }}" aria-expanded="false" aria-controls="{{ include.abstract_id }}">TL;DR <i class="fas fa-chevron-down pub-btn__chevron" aria-hidden="true"></i></button>
   {% endif %}
   {% if item.bibtexurl and item.bibtexurl != '' %}
   <button type="button" class="pub-btn" data-copy-bibtex="{{ base_path }}{{ item.bibtexurl }}"><i class="fas fa-quote-right" aria-hidden="true"></i> <span class="pub-btn__label">Copy BibTeX</span></button>

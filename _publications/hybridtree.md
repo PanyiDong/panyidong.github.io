@@ -6,4 +6,5 @@ permalink: /publication/hybridtree
 excerpt: ''
 paperurl: ''
 citation: 'Zhiyu Quan, Montserrat Guillen, Lluís Bermúdez.'
+labels: [Explainable AI (XAI), InsurTech, Hybrid Tree]
 ---

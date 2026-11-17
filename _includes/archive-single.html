@@ -16,7 +16,7 @@
   {% assign authors = post.citation | split: " (" | first | strip %}
 {% endif %}
 {% assign abstract_id = post.slug | default: post.url | slugify | prepend: "abs-" %}
-<article class="pub" itemscope itemtype="http://schema.org/ScholarlyArticle">
+<article class="pub" itemscope itemtype="http://schema.org/ScholarlyArticle"{% if post.labels and post.labels.size > 0 %} data-labels="{{ post.labels | join: '|' | escape }}"{% endif %}>
   <div class="pub__body">
     <h3 class="pub__title" itemprop="headline"><a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a></h3>
     {% if authors %}
@@ -39,7 +39,20 @@
     {% assign abstract_text = post.excerpt | strip_html | strip %}
     {% if abstract_text != '' and in_prep == false %}
     {% include pub-links.html item=post abstract_id=abstract_id %}
-    <div class="pub__abstract" id="{{ abstract_id }}" hidden itemprop="description">{{ post.excerpt | markdownify }}</div>
+    <div class="pub__abstract" id="{{ abstract_id }}" hidden>
+      <p class="pub__panel-heading">TL;DR</p>
+      <div class="pub__tldr" itemprop="description">{{ post.excerpt | markdownify }}</div>
+      {% if post.labels and post.labels.size > 0 %}
+      <div class="pub__labels">
+        <p class="pub__panel-heading">Topics</p>
+        <ul class="pub__label-list">
+          {% for label in post.labels %}
+          <li><a class="pub-label" href="{{ base_path }}/publications/?label={{ label | url_encode }}" data-label="{{ label | escape }}" title="Show all papers on {{ label | escape }}" itemprop="keywords">{{ label }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+    </div>
     {% elsif in_prep == false %}
     {% include pub-links.html item=post %}
     {% endif %}

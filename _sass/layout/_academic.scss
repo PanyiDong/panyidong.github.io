@@ -620,19 +620,313 @@ a.pub-btn--ghost:visited {
   }
 }
 
+/* TL;DR toggle button */
+.pub-btn--toggle {
+  .pub-btn__chevron {
+    font-size: 0.7em;
+    opacity: 0.7;
+    transition: transform 0.2s ease;
+  }
+
+  &[aria-expanded="true"] .pub-btn__chevron {
+    transform: rotate(180deg);
+  }
+}
+
+/* Expanded TL;DR panel */
 .pub__abstract {
   margin-top: 0.75rem;
-  padding: 0.75rem 1rem;
-  font-size: 0.9rem;
+  padding: 0.85rem 1.1rem 0.95rem;
+  font-size: 0.92rem;
   line-height: 1.6;
   color: var(--global-text-color);
   background: var(--global-surface-color);
-  border-radius: 6px;
+  border: 1px solid var(--global-border-color);
+  border-radius: 8px;
+  animation: pub-panel-in 0.18s ease-out;
 
   p {
     margin: 0;
     font-size: inherit;
   }
+}
+
+@keyframes pub-panel-in {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pub__abstract { animation: none; }
+  .pub-btn--toggle .pub-btn__chevron { transition: none; }
+}
+
+.pub__abstract p.pub__panel-heading {
+  margin: 0 0 0.3rem;
+  font-family: $sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--global-text-color-light);
+}
+
+.pub__labels {
+  margin-top: 0.85rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--global-border-color);
+}
+
+.pub__label-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    margin: 0;
+  }
+}
+
+/* Topic label chips (inside the panel) */
+.pub-label,
+.page__content a.pub-label,
+a.pub-label:visited {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.12rem 0.6rem;
+  font-family: $sans-serif;
+  font-size: 0.76rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--global-tag-text-color);
+  background: var(--global-tag-bg-color);
+  border: 1px solid transparent;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
+
+  &:hover {
+    border-color: var(--global-base-color);
+    text-decoration: none;
+  }
+
+  &.is-active {
+    color: #fff;
+    background: #13294b;
+    border-color: #13294b;
+  }
+}
+
+html[data-theme="dark"] .pub-label.is-active {
+  color: #0d1117;
+  background: #9db8e6;
+  border-color: #9db8e6;
+}
+
+/* ---------- Topic filter bar (Publications page) ---------- */
+
+.pub-filter {
+  margin: 0 0 2rem;
+  padding: 0.9rem 1rem 0.8rem;
+  background: var(--global-surface-color);
+  border: 1px solid var(--global-border-color);
+  border-radius: 10px;
+  scroll-margin-top: 90px;
+}
+
+.pub-filter__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 1.6rem;
+}
+
+.pub-filter.is-open .pub-filter__head {
+  margin-bottom: 0.6rem;
+}
+
+/* The whole header row is the expand / collapse control */
+.pub-filter__toggle {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin: -0.35rem -0.5rem;
+  padding: 0.35rem 0.5rem;
+  font: inherit;
+  text-align: left;
+  color: var(--global-text-color-light);
+  background: transparent;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+
+  &:hover {
+    color: var(--global-base-color);
+
+    .pub-filter__title {
+      color: var(--global-base-color);
+    }
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--global-accent-color);
+    outline-offset: 2px;
+  }
+}
+
+.pub-filter__chevron {
+  font-size: 0.75rem;
+  transition: transform 0.2s ease;
+
+  .pub-filter__toggle[aria-expanded="true"] & {
+    transform: rotate(180deg);
+  }
+}
+
+.pub-filter__list[hidden] {
+  display: none;
+}
+
+/* Clear button sits right of the toggle; keep it from crowding the chevron */
+.pub-filter__toggle + .pub-filter__clear {
+  margin-left: 0.25rem;
+}
+
+.pub-filter__title {
+  font-family: $sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--global-text-color-light);
+
+  i {
+    margin-right: 0.3rem;
+  }
+}
+
+.pub-filter__clear {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.15rem 0.55rem;
+  font-family: $sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--global-link-color);
+  background: transparent;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+
+  &:hover {
+    color: var(--global-link-color-hover);
+    background: var(--global-bg-color);
+  }
+
+  &[hidden] {
+    display: none;
+  }
+}
+
+.pub-filter__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    margin: 0;
+  }
+}
+
+.pub-filter__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.25rem 0.4rem 0.25rem 0.75rem;
+  font-family: $sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--global-text-color);
+  background: var(--global-bg-color);
+  border: 1px solid var(--global-dark-border-color);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
+
+  &:hover {
+    border-color: var(--global-base-color);
+    color: var(--global-base-color);
+  }
+
+  &:focus-visible,
+  .pub-filter__clear:focus-visible {
+    outline: 2px solid var(--global-accent-color);
+    outline-offset: 2px;
+  }
+
+  &.is-active {
+    color: #fff;
+    background: #13294b;
+    border-color: #13294b;
+
+    .pub-filter__count {
+      color: #13294b;
+      background: #fff;
+    }
+  }
+}
+
+html[data-theme="dark"] .pub-filter__chip.is-active {
+  color: #0d1117;
+  background: #9db8e6;
+  border-color: #9db8e6;
+
+  .pub-filter__count {
+    color: #9db8e6;
+    background: #0d1117;
+  }
+}
+
+.pub-filter__count {
+  min-width: 1.35rem;
+  padding: 0 0.35rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-align: center;
+  color: var(--global-text-color-light);
+  background: var(--global-surface-color);
+  border-radius: 999px;
+}
+
+.page__content .pub-filter__status,
+.pub-filter__status {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--global-text-color-light);
+
+  &:empty {
+    display: none;
+  }
+}
+
+.pub-filter.is-filtering .pub-filter__status {
+  margin-top: 0.65rem;
+}
+
+.pub[hidden],
+.pub-group[hidden] {
+  display: none;
 }
 
 /* ---------- Cite box on publication pages ---------- */
