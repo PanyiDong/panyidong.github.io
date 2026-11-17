@@ -5,31 +5,29 @@ permalink: /code/
 author_profile: true
 ---
 
-To support reproducible research and facilitate further development, the open-source implementations for these projects are available in the GitHub repositories below.
-
 {% include base_path %}
+
+<p class="archive__lead">To support reproducible research and further development, open-source implementations of my projects are available on <a href="https://github.com/{{ site.author.github }}"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>.</p>
 
 <!-- Render code items grouped by code_category, like the publications page -->
 {% if site.code_category %}
 {% for category in site.code_category %}
-{% assign title_shown = false %}
-
-{% for post in site.code %}
-{% if post.category != category[0] %}
-{% continue %}
+{% assign items = site.code | where: "category", category[0] %}
+{% if items.size > 0 %}
+<section class="pub-group">
+  <h2 class="pub-group__title" id="{{ category[0] }}">{{ category[1].title }}</h2>
+  <div class="code-grid">
+    {% for post in items %}
+    {% include archive-single.html %}
+    {% endfor %}
+  </div>
+</section>
 {% endif %}
-
-{% unless title_shown %}
-<h2>{{ category[1].title }}</h2>
-<hr />
-{% assign title_shown = true %}
-{% endunless %}
-
-{% include archive-single.html %}
-{% endfor %}
 {% endfor %}
 {% else %}
+<div class="code-grid">
 {% for post in site.code %}
 {% include archive-single.html %}
 {% endfor %}
+</div>
 {% endif %}

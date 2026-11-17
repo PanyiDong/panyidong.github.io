@@ -1,0 +1,29 @@
+{% comment %}
+  Renders a row of compact action buttons for a publication / code item.
+  Usage: {% include pub-links.html item=post details=true abstract_id="..." %}
+{% endcomment %}
+{% include base_path %}
+{% assign item = include.item %}
+<div class="pub-links">
+  {% if item.paperurl and item.paperurl != '' %}
+  <a class="pub-btn pub-btn--primary" href="{{ item.paperurl }}" target="_blank" rel="noopener"><i class="far fa-file-lines" aria-hidden="true"></i> Paper</a>
+  {% endif %}
+  {% if include.abstract_id %}
+  <button type="button" class="pub-btn" data-toggle-target="{{ include.abstract_id }}" aria-expanded="false" aria-controls="{{ include.abstract_id }}"><i class="fas fa-bolt" aria-hidden="true"></i> TL;DR</button>
+  {% endif %}
+  {% if item.bibtexurl and item.bibtexurl != '' %}
+  <a class="pub-btn" href="{{ base_path }}{{ item.bibtexurl }}"><i class="fas fa-quote-right" aria-hidden="true"></i> BibTeX</a>
+  {% endif %}
+  {% if item.slidesurl and item.slidesurl != '' %}
+  <a class="pub-btn" href="{{ item.slidesurl }}"><i class="fas fa-person-chalkboard" aria-hidden="true"></i> Slides</a>
+  {% endif %}
+  {% if item.githuburl and item.githuburl != '' %}
+  <a class="pub-btn" href="{{ item.githuburl }}" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i> Code</a>
+  {% endif %}
+  {% if item.link and item.link != '' %}
+  <a class="pub-btn" href="{{ item.link }}" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i> Link</a>
+  {% endif %}
+  {% if include.details %}
+  <a class="pub-btn pub-btn--ghost" href="{{ base_path }}{{ item.url }}">Details <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+  {% endif %}
+</div>
