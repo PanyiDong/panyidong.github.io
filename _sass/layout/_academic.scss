@@ -590,6 +590,36 @@ a.pub-btn--ghost:visited {
   padding: 0 0.4rem;
 }
 
+/* Awards: one pill per award, wraps when a paper has several */
+.pub__awards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.5rem;
+  margin: 0.45rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pub__award {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin: 0;
+  padding: 0.1rem 0.55rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--global-heading-color);
+  background: var(--global-surface-color);
+  border: 1px solid var(--global-accent-color);
+  border-radius: 999px;
+
+  i {
+    font-size: 0.75rem;
+    color: var(--global-accent-color);
+  }
+}
+
 .pub__abstract {
   margin-top: 0.75rem;
   padding: 0.75rem 1rem;

@@ -125,7 +125,7 @@ publication_category:
   books:
     title: 'Books'
   journal:
-    title: 'Journal Articles'    
+    title: 'Refereed Journal Articles'    
   conferences:
     title: 'Conference Papers'
   manuscripts:
@@ -375,7 +375,7 @@ timezone: Etc/UTC # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 
 # Plugins
-plugins:
+plugins: &plugins
   - jekyll-feed
   - jekyll-gist
   - jekyll-paginate
@@ -383,14 +383,8 @@ plugins:
   - jekyll-redirect-from
   - jemoji
 
-# Mimic GitHub Pages with --safe
-whitelist:
-  - jekyll-feed
-  - jekyll-gist
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-redirect-from
-  - jemoji
+# Mimic GitHub Pages with --safe (same list as plugins)
+whitelist: *plugins
 
 
 # Archives

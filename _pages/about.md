@@ -10,7 +10,7 @@ redirect_from:
 {% include base_path %}
 
 <div class="home-intro">
-  <p class="home-intro__lead">I am a Ph.D. student in Actuarial and Risk Management Sciences at the <strong>University of Illinois Urbana-Champaign (UIUC)</strong>. My research focuses on machine learning (ML) and other emerging data science techniques with applications on real-world problems in the insurance industry.</p>
+  <p class="home-intro__lead">I am a Ph.D. student in Actuarial and Risk Management Sciences at the <strong>University of Illinois Urbana-Champaign (UIUC)</strong>. My research focuses on developing trustworthy and responsible AI techniques to solve real-world challenges in the insurance industry.</p>
 
   <p class="home-intro__label">Research interests</p>
   <ul class="tag-list">
@@ -86,12 +86,12 @@ redirect_from:
 
 <section class="home-section">
   <div class="home-section__head">
-    <h2>Selected Publications</h2>
+    <h2>Latest Publications</h2>
     <a class="home-section__more" href="{{ base_path }}/publications/">All publications <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
   </div>
-  {% assign selected = site.publications | where: "category", "journal" | sort: "date" | reverse %}
+  {% assign latest_pubs = site.publications | where: "category", "journal" | sort: "date" | reverse %}
   <div class="pub-list">
-    {% for post in selected %}
+    {% for post in latest_pubs limit: 3 %}
       {% include archive-single.html %}
     {% endfor %}
   </div>

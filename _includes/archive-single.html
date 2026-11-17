@@ -29,6 +29,13 @@
       {% if post.venue %}<em>{{ post.venue }}</em>{% endif %}{% if post.venue and post.date %}, {% endif %}{% if post.date %}{{ post.date | date: "%Y" }}{% endif %}
       {% endif %}
     </p>
+    {% if include.show_awards and post.awards and post.awards.size > 0 %}
+    <ul class="pub__awards" aria-label="Awards">
+      {% for award in post.awards %}
+      <li class="pub__award"><i class="fas fa-trophy" aria-hidden="true"></i> {{ award }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
     {% assign abstract_text = post.excerpt | strip_html | strip %}
     {% if abstract_text != '' and in_prep == false %}
     {% include pub-links.html item=post abstract_id=abstract_id %}

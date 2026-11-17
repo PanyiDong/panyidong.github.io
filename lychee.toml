@@ -26,6 +26,7 @@ exclude = [
   '^https?://(www\.)?tandfonline\.com/',
   '^https?://doi\.org/10\.1080/',          # redirects to tandfonline.com
   '^https?://papers\.ssrn\.com/',
+  '^https?://asrm\.illinois\.edu/',        # Cloudflare JS challenge (cf-mitigated: challenge)
   # Not pages: font/CDN preconnect hints, page-view counter, local dev URLs
   '^https?://fonts\.(googleapis|gstatic)\.com/?$',
   '^https?://abacus\.jasoncameron\.dev/',

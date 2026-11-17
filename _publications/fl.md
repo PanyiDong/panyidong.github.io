@@ -10,6 +10,8 @@ paperurl: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6442024'
 bibtexurl: '/files/bib/fl.bib'
 citation: '<b>Dong, P.</b>, Feng, F., Quan, Z., Wang, T. (2026). Bridging the Divide While Walking
 a Tightrope: Evidence from the Insurance Industry on Federated Data Sharing.'
+awards:
+  - '2026 CCIRM Best Paper Award'
 ---
 
 ## The Motivation: Overcoming Data Silos and Privacy Tightropes

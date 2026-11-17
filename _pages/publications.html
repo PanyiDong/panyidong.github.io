@@ -42,7 +42,7 @@ author_profile: true
       <h2 class="pub-group__title" id="{{ category[0] }}">{{ category[1].title }} <span class="pub-group__count">{{ items.size }}</span></h2>
       <div class="pub-list">
         {% for post in items %}
-          {% include archive-single.html %}
+          {% include archive-single.html show_awards=true %}
         {% endfor %}
       </div>
     </section>
@@ -51,7 +51,7 @@ author_profile: true
 {% else %}
   <div class="pub-list">
   {% for post in site.publications reversed %}
-    {% include archive-single.html %}
+    {% include archive-single.html show_awards=true %}
   {% endfor %}
   </div>
 {% endif %}

@@ -77,7 +77,7 @@ layout: default
                                 <aside class="cite-box">
                                         <h2 class="cite-box__title">Cite this work</h2>
                                         <p class="cite-box__text">{{ page.citation }}</p>
-                                        {% if page.bibtexurl %}<a class="pub-btn" href="{{ base_path }}{{ page.bibtexurl }}"><i class="fas fa-download" aria-hidden="true"></i> Download BibTeX</a>{% endif %}
+                                        {% if page.bibtexurl %}<button type="button" class="pub-btn" data-copy-bibtex="{{ base_path }}{{ page.bibtexurl }}"><i class="fas fa-quote-right" aria-hidden="true"></i> <span class="pub-btn__label">Copy BibTeX</span></button>{% endif %}
                                 </aside>
                                 {% endif %}
 

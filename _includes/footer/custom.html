@@ -3,7 +3,7 @@
 <!-- Support for MathJax -->
 <script id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@4.0.0/tex-mml-chtml.js"></script>
 
-<!-- TL;DR toggles on publication lists -->
+<!-- Abstract toggles on publication lists -->
 <script>
     document.addEventListener('click', function (e) {
         var btn = e.target.closest('[data-toggle-target]');
@@ -15,6 +15,52 @@
         btn.setAttribute('aria-expanded', open ? 'true' : 'false');
         btn.classList.toggle('is-active', open);
     });
+</script>
+
+<!-- Copy BibTeX buttons: fetch the .bib file and copy its text; open the file if copying fails -->
+<script>
+    (function () {
+        function copyText(text) {
+            if (navigator.clipboard && window.isSecureContext) {
+                return navigator.clipboard.writeText(text);
+            }
+            return new Promise(function (resolve, reject) {
+                var ta = document.createElement('textarea');
+                ta.value = text;
+                ta.setAttribute('readonly', '');
+                ta.style.position = 'fixed';
+                ta.style.opacity = '0';
+                document.body.appendChild(ta);
+                ta.select();
+                var ok = false;
+                try { ok = document.execCommand('copy'); } catch (err) {}
+                document.body.removeChild(ta);
+                ok ? resolve() : reject();
+            });
+        }
+
+        document.addEventListener('click', function (e) {
+            var btn = e.target.closest('[data-copy-bibtex]');
+            if (!btn) return;
+            var url = btn.getAttribute('data-copy-bibtex');
+            var label = btn.querySelector('.pub-btn__label');
+            var original = label ? label.textContent : '';
+
+            fetch(url)
+                .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+                .then(function (text) { return copyText(text.trim()); })
+                .then(function () {
+                    if (label) label.textContent = 'Copied!';
+                    btn.classList.add('is-active');
+                    clearTimeout(btn._copyTimer);
+                    btn._copyTimer = setTimeout(function () {
+                        if (label) label.textContent = original;
+                        btn.classList.remove('is-active');
+                    }, 2000);
+                })
+                .catch(function () { window.location.href = url; });
+        });
+    })();
 </script>
 
 <!-- end custom footer snippets -->
