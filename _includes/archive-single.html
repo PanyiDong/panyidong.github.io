@@ -1,104 +1,84 @@
 {% include base_path %}
 
-{% if post.header.teaser %}
-{% capture teaser %}{{ post.header.teaser }}{% endcapture %}
-{% else %}
-{% assign teaser = site.teaser %}
-{% endif %}
-
 {% if post.id %}
-{% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
+{% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" | strip %}
 {% else %}
 {% assign title = post.title %}
 {% endif %}
 
-<div class="{{ include.type | default: " list" }}__item">
-        <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
-                {% if include.type == "grid" and teaser %}
-                <div class="archive__item-teaser">
-                        <img src={% if teaser contains "://" %} "{{ teaser }}" {% else %} "{{ teaser | prepend: '/files/images/' | prepend: base_path }}" {% endif %} alt="">
-                </div>
-                {% endif %}
+{% if post.collection == 'publications' %}
+{% comment %} ---------- Publication entry ---------- {% endcomment %}
+{% assign in_prep = false %}
+{% if post.paperurl == '' %}{% assign in_prep = true %}{% endif %}
+{% if post.authors %}
+  {% assign authors = post.authors %}
+{% elsif post.citation %}
+  {% assign authors = post.citation | split: " (" | first | strip %}
+{% endif %}
+{% assign abstract_id = post.slug | default: post.url | slugify | prepend: "abs-" %}
+<article class="pub" itemscope itemtype="http://schema.org/ScholarlyArticle">
+  <div class="pub__body">
+    <h3 class="pub__title" itemprop="headline"><a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a></h3>
+    {% if authors %}
+    <p class="pub__authors">{% if in_prep %}<span class="pub__with">with</span> {% endif %}{{ authors }}</p>
+    {% endif %}
+    <p class="pub__venue">
+      {% if in_prep %}
+      <span class="pub__status">In preparation</span>
+      {% else %}
+      {% if post.venue %}<em>{{ post.venue }}</em>{% endif %}{% if post.venue and post.date %}, {% endif %}{% if post.date %}{{ post.date | date: "%Y" }}{% endif %}
+      {% endif %}
+    </p>
+    {% assign abstract_text = post.excerpt | strip_html | strip %}
+    {% if abstract_text != '' and in_prep == false %}
+    {% include pub-links.html item=post abstract_id=abstract_id %}
+    <div class="pub__abstract" id="{{ abstract_id }}" hidden itemprop="description">{{ post.excerpt | markdownify }}</div>
+    {% elsif in_prep == false %}
+    {% include pub-links.html item=post %}
+    {% endif %}
+  </div>
+</article>
 
-                <h2 class="archive__item-title" itemprop="headline">
-                        {% if post.link %}
-                        <a href="{{ post.link }}">{{ title }}</a> <a href="{{ base_path }}{{ post.url }}"
-                                rel="permalink"><i class="fa fa-link" aria-hidden="true" title="permalink"></i><span
-                                        class="sr-only">Permalink</span></a>
-                        {% else %}
-                        <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a>
-                        {% endif %}
-                </h2>
+{% elsif post.collection == 'code' %}
+{% comment %} ---------- Code / software entry ---------- {% endcomment %}
+<article class="code-card" itemscope itemtype="http://schema.org/SoftwareSourceCode">
+  <h3 class="code-card__title" itemprop="name"><a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a></h3>
+  {% if post.githuburl %}
+  <p class="code-card__repo"><i class="fab fa-github" aria-hidden="true"></i> <a href="{{ post.githuburl }}" itemprop="codeRepository">{{ post.githuburl | remove: "https://github.com/" }}</a></p>
+  {% endif %}
+  {% if post.excerpt %}<div class="code-card__excerpt" itemprop="description">{{ post.excerpt | markdownify }}</div>{% endif %}
+  {% include pub-links.html item=post details=true %}
+</article>
 
-                {% if post.read_time %}
-                <p class="page__meta"><i class="fa fa-clock" aria-hidden="true"></i> {% include read-time.html %}</p>
-                {% endif %}
+{% elsif post.collection == 'teaching' %}
+{% comment %} ---------- Teaching entry ---------- {% endcomment %}
+<article class="entry" itemscope itemtype="http://schema.org/CreativeWork">
+  <div class="entry__date">{{ post.date | date: "%Y" }}</div>
+  <div class="entry__body">
+    <h3 class="entry__title" itemprop="headline"><a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a></h3>
+    <p class="entry__meta">{% if post.type %}{{ post.type }}{% endif %}{% if post.venue %} · <em>{{ post.venue }}</em>{% endif %}{% if post.location %} · {{ post.location }}{% endif %}</p>
+    {% if post.excerpt %}<div class="entry__excerpt" itemprop="description">{{ post.excerpt | markdownify }}</div>{% endif %}
+  </div>
+</article>
 
-                {% if post.collection == 'teaching' %}
-                <p> {{ post.type }}, <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </p>
-                {% elsif post.collection == 'publications' and post.paperurl == '' %}
-                <p>In preparation</p>
-                {% elsif post.collection == 'publications' %}
-                <p>Published in <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </p>
-                {% elsif post.collection == 'code' and post.githuburl %}
-                <p><i class="fab fa-github" aria-hidden="true"></i> <a href="{{ post.githuburl }}">{{ post.githuburl
-                                }}</a></p>
-                {% elsif post.date %}
-                <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{
-                                site.data.ui-text[site.locale].date_label | default: "Published:" }}</strong> <time
-                                datetime="{{ post.date | default: " 1900-01-01" | date_to_xmlschema }}">{{ post.date |
-                                default:
-                                "1900-01-01" |
-                                date: "%B %d, %Y" }}</time></p>
-                {% endif %}
-
-                {% if post.excerpt and site.read_more != 'enabled' %}
-                <p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify }}</p>
-                {% elsif post.excerpt and site.read_more == 'enabled' %}
-                <p class="archive__item-excerpt" itemprop="description">
-                <p>{{ post.excerpt | markdownify | remove: '
-                <p>' | remove: '</p>' }}<strong><a href="{{ base_path }}{{ post.url }}" rel="permalink"> Read
-                                more</a></strong>
-                </p>
-                </p>
-                {% endif %}
-
-                {% if post.citation and post.paperurl and post.slidesurl and post.bibtexurl %}
-                <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.paperurl }}">Read Paper</a> | <a
-                                href="{{ post.slidesurl }}">Download Slides</a> | <a
-                                href="{{ post.bibtexurl }}">Download Bibtex</a></p>
-                {% elsif post.citation and post.collection == 'publications' and post.paperurl == '' %}
-                <p>With: {{ post.citation }}</p>
-                {% elsif post.citation and post.paperurl and post.slidesurl %}
-                <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.paperurl }}">Read Paper</a> | <a
-                                href="{{ post.slidesurl }}">Download Slides</a></p>
-                {% elsif post.citation and post.paperurl and post.bibtexurl %}
-                <p>Recommended citation: {{ post.citation }} <a href="{{ post.paperurl }}">Read Paper</a> | <a
-                                href="{{ post.bibtexurl }}">Download Bibtex</a></p>
-                {% elsif post.citation and post.paperurl %}
-                <p>Recommended citation: {{ post.citation }} <a href="{{ post.paperurl }}">Read Paper</a></p>
-                {% elsif post.citation and post.slidesurl and post.bibtexurl %}
-                <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.slidesurl }}">Download Slides</a> |
-                        <a href="{{ post.bibtexurl}}">Download Bibtex</a>
-                </p>
-                {% elsif post.citation and post.slidesurl %}
-                <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.slidesurl }}">Download Slides</a></p>
-                {% elsif post.citation and post.bibtexurl %}
-                <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
-                {% elsif post.citation %}
-                <p>Recommended citation: {{ post.citation }}</p>
-                {% elsif post.paperurl and post.bibtexurl %}
-                <p><a href="{{ post.paperurl }}">Read Paper</a> | <a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
-                {% elsif post.paperurl %}
-                <p><a href="{{ post.paperurl }}">Read Paper</a></p>
-                {% elsif post.slidesurl and post.bibtexurl %}
-                <p><a href="{{ post.slidesurl }}">Download Slides</a> | <a href="{{ post.bibtexurl }}">Download
-                                Bibtex</a></p>
-                {% elsif post.slidesurl %}
-                <p><a href="{{ post.slidesurl }}">Download Slides</a></p>
-                {% elsif post.bibtexurl %}
-                <p><a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
-                {% endif %}
-
-        </article>
+{% else %}
+{% comment %} ---------- Generic entry (posts, portfolio, related, ...) ---------- {% endcomment %}
+<div class="{{ include.type | default: 'list' }}__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    <h2 class="archive__item-title" itemprop="headline">
+      {% if post.link %}
+      <a href="{{ post.link }}">{{ title }}</a> <a href="{{ base_path }}{{ post.url }}" rel="permalink"><i class="fa fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
+      {% else %}
+      <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a>
+      {% endif %}
+    </h2>
+    {% if post.read_time %}
+    <p class="page__meta"><i class="fa fa-clock" aria-hidden="true"></i> {% include read-time.html %}</p>
+    {% endif %}
+    {% if post.date %}
+    <p class="page__date"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time></p>
+    {% endif %}
+    {% if post.excerpt %}<div class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify }}</div>{% endif %}
+  </article>
 </div>
+{% endif %}

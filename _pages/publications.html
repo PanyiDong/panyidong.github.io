@@ -5,71 +5,53 @@ permalink: /publications/
 author_profile: true
 ---
 
-{% if site.author.googlescholar %}
-<div class="wordwrap">You can also find latest articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
-{% endif %}
-
 {% include base_path %}
+
+{% if site.author.googlescholar %}
+<p class="archive__lead">For the most up-to-date list and citation counts, see my <a href="{{ site.author.googlescholar }}"><i class="ai ai-google-scholar" aria-hidden="true"></i> Google Scholar profile</a>.</p>
+{% endif %}
 
 <!-- New style rendering if publication categories are defined -->
 {% if site.publication_category %}
   {% for category in site.publication_category %}
-    {% assign title_shown = false %}
+    {% assign items = '' | split: ',' %}
 
     {% if category[0] == 'manuscripts' %}
       {% assign dated_manuscripts = '' | split: ',' %}
       {% assign undated_manuscripts = '' | split: ',' %}
       {% for post in site.publications %}
-        {% if post.category != category[0] %}
-          {% continue %}
-        {% endif %}
+        {% if post.category != category[0] %}{% continue %}{% endif %}
         {% if post.date %}
           {% assign dated_manuscripts = dated_manuscripts | push: post %}
         {% else %}
           {% assign undated_manuscripts = undated_manuscripts | push: post %}
         {% endif %}
       {% endfor %}
+      {% comment %} Dated manuscripts first, sorted by date (oldest -> newest); undated manuscripts last {% endcomment %}
       {% assign dated_manuscripts = dated_manuscripts | sort: 'date' %}
-
-      {% comment %} Dated manuscripts first, sorted by date (oldest -> newest) {% endcomment %}
-      {% for post in dated_manuscripts %}
-        {% unless title_shown %}
-          <h2>{{ category[1].title }}</h2>
-          <hr />
-        {% assign title_shown = true %}
-        {% endunless %}
-
-        {% include archive-single.html %}
-      {% endfor %}
-
-      {% comment %} Undated manuscripts last {% endcomment %}
-      {% for post in undated_manuscripts %}
-        {% unless title_shown %}
-          <h2>{{ category[1].title }}</h2>
-          <hr />
-        {% assign title_shown = true %}
-        {% endunless %}
-
-        {% include archive-single.html %}
-      {% endfor %}
+      {% assign items = dated_manuscripts | concat: undated_manuscripts %}
     {% else %}
       {% for post in site.publications reversed %}
-        {% if post.category != category[0] %}
-          {% continue %}
-        {% endif %}
-
-        {% unless title_shown %}
-         <h2>{{ category[1].title }}</h2>
-         <hr />
-         {% assign title_shown = true %}
-        {% endunless %}
-
-        {% include archive-single.html %}
+        {% if post.category != category[0] %}{% continue %}{% endif %}
+        {% assign items = items | push: post %}
       {% endfor %}
+    {% endif %}
+
+    {% if items.size > 0 %}
+    <section class="pub-group">
+      <h2 class="pub-group__title" id="{{ category[0] }}">{{ category[1].title }} <span class="pub-group__count">{{ items.size }}</span></h2>
+      <div class="pub-list">
+        {% for post in items %}
+          {% include archive-single.html %}
+        {% endfor %}
+      </div>
+    </section>
     {% endif %}
   {% endfor %}
 {% else %}
+  <div class="pub-list">
   {% for post in site.publications reversed %}
     {% include archive-single.html %}
   {% endfor %}
+  </div>
 {% endif %}
