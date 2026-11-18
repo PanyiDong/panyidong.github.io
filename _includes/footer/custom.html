@@ -6,7 +6,7 @@
 <!-- TL;DR panels and topic filtering on publication lists -->
 <script>
     (function () {
-        // ---- TL;DR expand / collapse ----
+        /* ---- TL;DR expand / collapse ---- */
         document.addEventListener('click', function (e) {
             var btn = e.target.closest('[data-toggle-target]');
             if (!btn) return;
@@ -18,16 +18,16 @@
             btn.classList.toggle('is-active', open);
         });
 
-        // ---- Topic filter (Publications page only) ----
+        /* ---- Topic filter (Publications page only) ---- */
         var filter = document.getElementById('pub-filter');
-        if (!filter) return;  // elsewhere, topic labels are plain links to /publications/?label=...
+        if (!filter) return;  /* elsewhere, topic labels are plain links to /publications/?label=... */
 
         var chips = filter.querySelectorAll('[data-filter-label]');
         var clearBtn = filter.querySelector('[data-filter-clear]');
         var toggleBtn = filter.querySelector('[data-filter-toggle]');
         var panel = document.getElementById(toggleBtn.getAttribute('aria-controls'));
 
-        // Folded by default; the header row expands / collapses the topic chips
+        /* Folded by default; the header row expands / collapses the topic chips */
         function setOpen(open) {
             panel.hidden = !open;
             toggleBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
@@ -99,7 +99,7 @@
             if (e.target.closest('[data-filter-clear]')) apply(null, true);
         });
 
-        // Clicking a topic inside a TL;DR panel filters in place and brings the filter into view
+        /* Clicking a topic inside a TL;DR panel filters in place and brings the filter into view */
         document.addEventListener('click', function (e) {
             var link = e.target.closest('.pub-label');
             if (!link || e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
