@@ -249,6 +249,8 @@ exclude:
   - vendor
   - lychee.toml
   - .lycheecache
+  - talkmap.py
+  - talkmap.ipynb
 keep_files:
   - .git
   - .svn
