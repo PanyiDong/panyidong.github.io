@@ -1,0 +1,11 @@
+{% comment %}
+  Venue line for a publication: "Venue, Year" followed by an optional status badge.
+  Status comes from the `status` front matter (e.g. 'Under review', 'In preparation',
+  'Revise and resubmit'). With no status, `paperurl: ''` still means "In preparation".
+  Usage: {% include pub-venue.html item=post %}
+{% endcomment %}
+{% assign pv_item = include.item %}
+{% assign pv_status = pv_item.status %}
+{% if pv_status == nil or pv_status == '' %}{% assign pv_status = nil %}{% if pv_item.paperurl == '' %}{% assign pv_status = 'In preparation' %}{% endif %}{% endif %}
+{% if pv_item.venue %}<em>{{ pv_item.venue }}</em>{% endif %}{% if pv_item.venue and pv_item.date %}, {% endif %}{% if pv_item.date %}{{ pv_item.date | date: "%Y" }}{% endif %}
+{% if pv_status %}<span class="pub__status pub__status--{{ pv_status | slugify }}{% if pv_item.venue or pv_item.date %} pub__status--after{% endif %}">{{ pv_status }}</span>{% endif %}

@@ -4,6 +4,12 @@
 {% endcomment %}
 {% include base_path %}
 {% assign item = include.item %}
+{% comment %} Only render the row when at least one button has something behind it {% endcomment %}
+{% assign pl_any = false %}
+{% if include.abstract_id or include.details %}{% assign pl_any = true %}{% endif %}
+{% assign pl_keys = "paperurl,bibtexurl,slidesurl,githuburl,link" | split: "," %}
+{% for pl_key in pl_keys %}{% if item[pl_key] and item[pl_key] != '' %}{% assign pl_any = true %}{% endif %}{% endfor %}
+{% if pl_any %}
 <div class="pub-links">
   {% if item.paperurl and item.paperurl != '' %}
   <a class="pub-btn pub-btn--primary" href="{{ item.paperurl }}" target="_blank" rel="noopener"><i class="far fa-file-lines" aria-hidden="true"></i> Paper</a>
@@ -27,3 +33,4 @@
   <a class="pub-btn pub-btn--ghost" href="{{ base_path }}{{ item.url }}">Details <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
   {% endif %}
 </div>
+{% endif %}

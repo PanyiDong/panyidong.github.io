@@ -5,6 +5,7 @@ category: manuscripts
 permalink: /publication/fairness-attention
 excerpt: 'In this paper, we introduce the Feature Correlation Transformer (FCorrTransformer) and Counterfactual Attention Regularization (CAR). This efficient, attention-light framework achieves counterfactual fairness and high interpretability for tabular datasets, effectively mitigating algorithmic bias with minimal predictive performance degradation.'
 date: 2026-04-29
+status: 'Under review'
 venue: 'arXiv'
 paperurl: 'https://arxiv.org/abs/2604.26188'
 bibtexurl: '/files/bib/fairness-attention.bib'

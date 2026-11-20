@@ -8,27 +8,21 @@
 
 {% if post.collection == 'publications' %}
 {% comment %} ---------- Publication entry ---------- {% endcomment %}
-{% assign in_prep = false %}
-{% if post.paperurl == '' %}{% assign in_prep = true %}{% endif %}
 {% if post.authors %}
   {% assign authors = post.authors %}
 {% elsif post.citation %}
   {% assign authors = post.citation | split: " (" | first | strip %}
 {% endif %}
 {% assign abstract_id = post.slug | default: post.url | slugify | prepend: "abs-" %}
-<article class="pub" itemscope itemtype="http://schema.org/ScholarlyArticle"{% if post.labels and post.labels.size > 0 %} data-labels="{{ post.labels | join: '|' | escape }}"{% endif %}>
+<article class="pub{% if include.index %} pub--numbered{% endif %}" itemscope itemtype="http://schema.org/ScholarlyArticle"{% if post.labels and post.labels.size > 0 %} data-labels="{{ post.labels | join: '|' | escape }}"{% endif %}>
+  {% if include.index %}<span class="pub__num" aria-hidden="true">{{ include.index }}</span>{% endif %}
   <div class="pub__body">
     <h3 class="pub__title" itemprop="headline"><a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a></h3>
     {% if authors %}
-    <p class="pub__authors">{% if in_prep %}<span class="pub__with">with</span> {% endif %}{{ authors }}</p>
+    {% comment %} Your name is bold in every author list; lists without it are co-authors only, shown as "with ..." {% endcomment %}
+    <p class="pub__authors">{% unless authors contains '<b>' %}<span class="pub__with">with</span> {% endunless %}{{ authors }}</p>
     {% endif %}
-    <p class="pub__venue">
-      {% if in_prep %}
-      <span class="pub__status">In preparation</span>
-      {% else %}
-      {% if post.venue %}<em>{{ post.venue }}</em>{% endif %}{% if post.venue and post.date %}, {% endif %}{% if post.date %}{{ post.date | date: "%Y" }}{% endif %}
-      {% endif %}
-    </p>
+    <p class="pub__venue">{% include pub-venue.html item=post %}</p>
     {% if include.show_awards and post.awards and post.awards.size > 0 %}
     <ul class="pub__awards" aria-label="Awards">
       {% for award in post.awards %}
@@ -37,7 +31,8 @@
     </ul>
     {% endif %}
     {% assign abstract_text = post.excerpt | strip_html | strip %}
-    {% if abstract_text != '' and in_prep == false %}
+    {% comment %} Buttons appear only for what exists: a paper under review may have no link, TL;DR or BibTeX yet {% endcomment %}
+    {% if abstract_text != '' %}
     {% include pub-links.html item=post abstract_id=abstract_id %}
     <div class="pub__abstract" id="{{ abstract_id }}" hidden>
       <p class="pub__panel-heading">TL;DR</p>
@@ -53,7 +48,7 @@
       </div>
       {% endif %}
     </div>
-    {% elsif in_prep == false %}
+    {% else %}
     {% include pub-links.html item=post %}
     {% endif %}
   </div>

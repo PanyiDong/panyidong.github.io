@@ -5,7 +5,8 @@ category: manuscripts
 permalink: /publication/fl
 excerpt: 'This paper proposes a Hybrid Federated Learning (HyFL) framework tailored for the insurance industry that bridges data silos across insurers and InsurTech partners, achieving significant predictive accuracy gains and unlocking substantial financial value while preserving data privacy.'
 date: 2026-03-19
-venue: 'ssrn'
+status: 'Under review'
+venue: 'SSRN'
 paperurl: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6442024'
 bibtexurl: '/files/bib/fl.bib'
 citation: '<b>Dong, P.</b>, Feng, R., Quan, Z., Wang, T. (2026). Bridging the Divide While Walking

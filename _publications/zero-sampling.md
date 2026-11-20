@@ -5,6 +5,8 @@ category: manuscripts
 permalink: /publication/zero-sampling
 excerpt: ''
 paperurl: ''
-citation: 'Zhiyu Quan, Haiying Wang, Jing Wang, Jiaqi Liu.'
+date: 2026-11-01
+status: 'Under review'
+citation: 'Wang, J., <b>Dong, P.</b>, Liu, J., Quan, Z., Wang, H.'
 labels: [Computational Efficiency, Imbalanced Learning]
 ---

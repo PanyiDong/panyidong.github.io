@@ -10,7 +10,7 @@ redirect_from:
 {% include base_path %}
 
 <div class="home-intro">
-  <p class="home-intro__lead">I am a Ph.D. student in Actuarial and Risk Management Sciences at the <strong>University of Illinois Urbana-Champaign (UIUC)</strong>. My research focuses on developing trustworthy and responsible AI techniques to solve real-world challenges in the insurance industry.</p>
+  <p class="home-intro__lead">I am a Ph.D. student in Actuarial and Risk Management Sciences at the <strong>University of Illinois Urbana-Champaign (UIUC)</strong>.Can  My research focuses on developing trustworthy and responsible AI techniques to solve real-world challenges in the insurance industry.</p>
 
   <p class="home-intro__label">Research interests</p>
   <ul class="tag-list">

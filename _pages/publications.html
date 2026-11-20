@@ -74,7 +74,7 @@ author_profile: true
       items.size }}</span></h2>
   <div class="pub-list">
     {% for post in items %}
-    {% include archive-single.html show_awards=true %}
+    {% include archive-single.html show_awards=true index=forloop.index %}
     {% endfor %}
   </div>
 </section>
@@ -83,7 +83,7 @@ author_profile: true
 {% else %}
 <div class="pub-list">
   {% for post in site.publications reversed %}
-  {% include archive-single.html show_awards=true %}
+  {% include archive-single.html show_awards=true index=forloop.index %}
   {% endfor %}
 </div>
 {% endif %}

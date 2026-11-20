@@ -36,7 +36,6 @@ layout: default
                         {% unless page.header.overlay_color or page.header.overlay_image %}
                         <header class="page__header">
                                 {% if page.collection == 'publications' %}
-                                {% assign in_prep = false %}{% if page.paperurl == '' %}{% assign in_prep = true %}{% endif %}
                                 <p class="page__eyebrow"><a href="{{ base_path }}/publications/">Publications</a>{% if page.category and site.publication_category[page.category] %} · {{ site.publication_category[page.category].title }}{% endif %}</p>
                                 {% elsif page.collection == 'code' %}
                                 <p class="page__eyebrow"><a href="{{ base_path }}/code/">Code</a>{% if page.category and site.code_category[page.category] %} · {{ site.code_category[page.category].title }}{% endif %}</p>
@@ -52,12 +51,9 @@ layout: default
 
                                 {% if page.collection == 'publications' %}
                                 {% if page.authors %}{% assign authors = page.authors %}{% elsif page.citation %}{% assign authors = page.citation | split: " (" | first | strip %}{% endif %}
-                                {% if authors %}<p class="page__authors">{% if in_prep %}<span class="pub__with">with</span> {% endif %}{{ authors }}</p>{% endif %}
-                                <p class="page__venue">
-                                        {% if in_prep %}<span class="pub__status">In preparation</span>
-                                        {% else %}{% if page.venue %}<em>{{ page.venue }}</em>{% endif %}{% if page.venue and page.date %}, {% endif %}{% if page.date %}{{ page.date | date: "%Y" }}{% endif %}{% endif %}
-                                </p>
-                                {% unless in_prep %}{% include pub-links.html item=page %}{% endunless %}
+                                {% if authors %}<p class="page__authors">{% unless authors contains '<b>' %}<span class="pub__with">with</span> {% endunless %}{{ authors }}</p>{% endif %}
+                                <p class="page__venue">{% include pub-venue.html item=page %}</p>
+                                {% include pub-links.html item=page %}
                                 {% elsif page.collection == 'code' %}
                                 {% include pub-links.html item=page %}
                                 {% elsif page.collection == 'teaching' %}
@@ -73,7 +69,7 @@ layout: default
                         <section class="page__content" itemprop="text">
                                 {{ content }}
 
-                                {% if page.collection == 'publications' and page.citation and page.paperurl != '' %}
+                                {% if page.collection == 'publications' and page.citation and page.paperurl and page.paperurl != '' %}
                                 <aside class="cite-box">
                                         <h2 class="cite-box__title">Cite this work</h2>
                                         <p class="cite-box__text">{{ page.citation }}</p>
